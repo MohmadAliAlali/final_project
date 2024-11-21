@@ -4,7 +4,7 @@ import 'package:final_project/core/services/respnsive.dart';
 import 'package:flutter/material.dart';
 
 
-class CoursersTextField extends StatefulWidget {
+class TaskyTextField extends StatefulWidget {
   final TextEditingController controller;
   final String hintText;
   final String text;
@@ -20,7 +20,7 @@ class CoursersTextField extends StatefulWidget {
   final double pl;
   final double pr;
 
-  const CoursersTextField({
+  const TaskyTextField({
     super.key,
     required this.controller,
     required this.hintText,
@@ -39,10 +39,10 @@ class CoursersTextField extends StatefulWidget {
   });
 
   @override
-  CoursersTextFieldState createState() => CoursersTextFieldState();
+  TaskyTextFieldState createState() => TaskyTextFieldState();
 }
 
-class CoursersTextFieldState extends State<CoursersTextField> {
+class TaskyTextFieldState extends State<TaskyTextField> {
   bool _obscureText = true;
 
   @override
@@ -56,17 +56,8 @@ class CoursersTextFieldState extends State<CoursersTextField> {
     return Padding(
       padding: EdgeInsets.only(
           top: widget.pt, left: widget.pl, right: widget.pr, bottom: widget.pb),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            widget.text,
-            style: TaskyTextStyle.text16Black400,
-            textAlign: TextAlign.left,
-          ),
-          const SizedBox(height: 8.0),
-          SizedBox(
-            height: 80.h,
+          child: SizedBox(
+            height: 100.h,
             width: 329.0.w,
             child: TextFormField(
               controller: widget.controller,
@@ -83,15 +74,15 @@ class CoursersTextFieldState extends State<CoursersTextField> {
                     .copyWith(color: Colors.red),
                 contentPadding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 16.0.h),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(5.5.r),
+                  borderRadius: BorderRadius.circular(16.r),
                   borderSide: BorderSide(color: widget.color),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(5.5.r),
+                  borderRadius: BorderRadius.circular(16.r),
                   borderSide: BorderSide(color: widget.color),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(5.5.r),
+                  borderRadius: BorderRadius.circular(16.r),
                   borderSide: BorderSide(color: widget.color),
                 ),
                 hintText: widget.hintText,
@@ -125,8 +116,7 @@ class CoursersTextFieldState extends State<CoursersTextField> {
               ),
             ),
           ),
-        ],
-      ),
+
     );
   }
 }

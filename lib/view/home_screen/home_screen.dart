@@ -1,3 +1,11 @@
+import 'package:final_project/core/services/navigation.dart';
+import 'package:final_project/view/nav_bar_page.dart';
+import 'package:final_project/widgets/tasky_button_add.dart';
+import 'package:final_project/widgets/tasky_button_add_page.dart';
+import 'package:final_project/widgets/tasky_button_profile.dart';
+import 'package:final_project/widgets/tasky_button_user_profile.dart';
+import 'package:final_project/widgets/tasky_button_with_swich.dart';
+import 'package:final_project/widgets/tasky_text_form_filed_with_text.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -11,7 +19,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
+  TextEditingController _controller = TextEditingController();
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -37,11 +45,28 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            TaskyButtonUserProfile(onPressed: () {  },
+              child: Text('data'),),
+            SizedBox(height: 20,),
+            TaskyButtonWithSwitch(onPressed: () {  },
+              child: Text('data'),),
+            SizedBox(height: 20,),
+            TaskyTextFormFiledWithText(
+              controller: _controller,
+              hintText: 'hello',
+              text: 'hello',),
+            SizedBox(height: 20,),
+            TaskyButtonAdd(
+              onPressed: (){},
+              child: Text('data',style: TextStyle(color: Colors.white),),
+            )
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed:(){
+          Navigation.navigateTo(context, NavBarPage());
+        },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),

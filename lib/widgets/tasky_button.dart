@@ -2,14 +2,13 @@ import 'package:final_project/core/constans/tasky_color.dart';
 import 'package:final_project/core/services/respnsive.dart';
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatelessWidget {
+class TaskyButton extends StatelessWidget {
   final VoidCallback onPressed;
   final Widget child;
   final double width;
   final double height;
   final Color color;
-
-  const CustomButton({
+  const TaskyButton({
     super.key,
     required this.onPressed,
     required this.child,
