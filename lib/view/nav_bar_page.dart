@@ -72,7 +72,7 @@ class _NavBarPageState extends State<NavBarPage> {
             child: Container(
               width:  50.w,
               height: 50.h,
-              padding: EdgeInsets.all(11.e),
+              padding: EdgeInsets.fromLTRB(11.w, 11.h, 11.w, 11.h),
               decoration: isCenter
                   ? BoxDecoration(
                 shape: BoxShape.circle,

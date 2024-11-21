@@ -43,7 +43,7 @@ class _TaskyButtonWithSwitchState extends State<TaskyButtonWithSwitch> {
         children: [
           Text(widget.text),
           Transform.scale(
-            scale: 0.6.e, // Adjust size
+            scale: 0.65.h, // Adjust size
             child: Switch(
               value: isTrue,
               // activeColor: Colors.orange,
