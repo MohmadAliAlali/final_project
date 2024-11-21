@@ -1,5 +1,5 @@
 import 'package:final_project/core/constans/tasky_icons.dart';
-import 'package:final_project/core/services/respnsive.dart';
+import 'package:final_project/core/services/responsive.dart';
 import 'package:final_project/view/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,7 +15,7 @@ class _NavBarPageState extends State<NavBarPage> {
   int visit = 0;
 
   final List<Widget> pages = [
-    const MyHomePage(title: '',),
+    const MyHomePage(),
     const Scaffold(body: Center(child: Text("Shop Page"))),
     const Scaffold(body: Center(child: Text("Wishlist Page"))),
     const Scaffold(body: Center(child: Text("Cart Page"))),
