@@ -2,7 +2,7 @@ import 'package:final_project/core/constans/tasky_icons.dart';
 import 'package:final_project/core/services/navigation.dart';
 import 'package:final_project/view/nav_bar_page.dart';
 import 'package:final_project/widgets/tasky_button_add.dart';
-import 'package:final_project/widgets/tasky_button_add_page.dart';
+import 'package:final_project/widgets/tasky_button_root.dart';
 import 'package:final_project/widgets/tasky_button_profile.dart';
 import 'package:final_project/widgets/tasky_button_user_profile.dart';
 import 'package:final_project/widgets/tasky_button_with_swich.dart';
@@ -52,3 +52,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+

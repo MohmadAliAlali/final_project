@@ -1,7 +1,7 @@
 import 'package:final_project/core/services/responsive.dart';
 import 'package:flutter/material.dart';
 
-class TaskyButtonAddPage extends StatelessWidget {
+class TaskyButtonRoot extends StatelessWidget {
   final VoidCallback onPressed;
   final Widget child;
   final double width;
@@ -11,7 +11,7 @@ class TaskyButtonAddPage extends StatelessWidget {
   final double paddingRight ;
   final double paddingTop ;
   final double paddingBottom ;
-  const TaskyButtonAddPage({
+  const TaskyButtonRoot({
     super.key,
     required this.onPressed,
     required this.child,
@@ -38,7 +38,7 @@ class TaskyButtonAddPage extends StatelessWidget {
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
               color: color,
-              border: Border.all(color: Color(0xffDFDFDF),width: 1.e),
+              border: Border.all(color:const  Color(0xffDFDFDF),width: 1.e),
               borderRadius: BorderRadius.circular(12.r)
           ),
           child: child,
