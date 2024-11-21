@@ -1,4 +1,5 @@
 import 'package:final_project/core/services/respnsive.dart';
+import 'package:final_project/view/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class NavBarPage extends StatefulWidget {
@@ -11,9 +12,8 @@ class NavBarPage extends StatefulWidget {
 class _NavBarPageState extends State<NavBarPage> {
   int visit = 0;
 
-  // صفحات التنقل
   final List<Widget> pages = [
-    const Scaffold(body: Center(child: Text("Home Page"))),
+    MyHomePage(title: '',),
     const Scaffold(body: Center(child: Text("Shop Page"))),
     const Scaffold(body: Center(child: Text("Wishlist Page"))),
     const Scaffold(body: Center(child: Text("Cart Page"))),
