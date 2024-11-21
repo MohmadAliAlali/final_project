@@ -1,7 +1,7 @@
 import 'package:final_project/core/services/media_query_util.dart';
-import 'package:final_project/widgets/taskcy_header.dart';
-import 'package:final_project/widgets/taskcy_svg.dart';
-import 'package:final_project/widgets/taskcy_text.dart';
+import 'package:final_project/widgets/tasky_header.dart';
+import 'package:final_project/widgets/tasky_svg.dart';
+import 'package:final_project/widgets/tasky_text.dart';
 import 'package:flutter/material.dart';
 
 class TaskcyHomeScreen extends StatelessWidget {

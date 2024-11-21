@@ -2,6 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class TaskcySvg extends StatelessWidget {
+  const TaskcySvg(
+      {super.key,
+      // ignore: non_constant_identifier_names
+      required this.TaskcySvgLink,
+      this.svgWidth,
+      this.svgHeight,
+      this.svgTopPadding,
+      this.svgLeftPadding,
+      this.svgBottomPadding,
+      this.svgRightPadding,
+      this.svgColor});
+  // ignore: non_constant_identifier_names
   final String TaskcySvgLink;
   final double? svgWidth;
   final double? svgHeight;
@@ -10,18 +22,6 @@ class TaskcySvg extends StatelessWidget {
   final double? svgBottomPadding;
   final double? svgRightPadding;
   final Color? svgColor;
-  const TaskcySvg(
-      {super.key,
-        required this.TaskcySvgLink,
-        this.svgWidth,
-        this.svgHeight,
-        this.svgTopPadding,
-        this.svgLeftPadding,
-        this.svgBottomPadding,
-        this.svgRightPadding,
-        this.svgColor});
-
-
   @override
   Widget build(BuildContext context) {
     return Padding(

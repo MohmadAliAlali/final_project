@@ -1,5 +1,5 @@
 import 'package:final_project/core/services/media_query_util.dart';
-import 'package:final_project/widgets/taskcy_text.dart';
+import 'package:final_project/widgets/tasky_text.dart';
 import 'package:flutter/material.dart';
 
 class TaskcyHeader extends StatelessWidget {

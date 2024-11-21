@@ -16,7 +16,7 @@ class TaskyTextStyle {
   );
   static TextStyle welcomePagesSubTitle = const TextStyle(
     fontFamily: 'Poppins',
-    fontSize: 37,
+    fontSize: 17,
     fontWeight: FontWeight.w700,
     color: TaskyColor.grayText,
   );
@@ -36,8 +36,8 @@ class TaskyTextStyle {
   static TextStyle threeOnboardingTextStyle = const TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 35,
-    fontWeight: FontWeight.w500,
-    color: TaskyColor.orange,
+    fontWeight: FontWeight.w400,
+    color: TaskyColor.gray0,
   );
   static TextStyle differentOrangeWordsTextStyle = const TextStyle(
     fontFamily: 'Poppins-Bold',
