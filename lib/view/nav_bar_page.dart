@@ -1,9 +1,11 @@
+import 'package:final_project/core/constans/tasky_icons.dart';
 import 'package:final_project/core/services/respnsive.dart';
 import 'package:final_project/view/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class NavBarPage extends StatefulWidget {
-  const NavBarPage({Key? key}) : super(key: key);
+  const NavBarPage({super.key});
 
   @override
   State<NavBarPage> createState() => _NavBarPageState();
@@ -13,7 +15,7 @@ class _NavBarPageState extends State<NavBarPage> {
   int visit = 0;
 
   final List<Widget> pages = [
-    MyHomePage(title: '',),
+    const MyHomePage(title: '',),
     const Scaffold(body: Center(child: Text("Shop Page"))),
     const Scaffold(body: Center(child: Text("Wishlist Page"))),
     const Scaffold(body: Center(child: Text("Cart Page"))),
@@ -29,14 +31,20 @@ class _NavBarPageState extends State<NavBarPage> {
   }
 
   Widget _buildCustomNavBar() {
-    final List<IconData> icons = [
-      Icons.home,
-      Icons.search_sharp,
-      Icons.favorite_border,
-      Icons.shopping_cart_outlined,
-      Icons.account_box,
+    final List<SvgPicture> icons = [
+      TaskyIcons.homeUnClick,
+      TaskyIcons.folderUnClick,
+      TaskyIcons.add,
+      TaskyIcons.chatUnClick,
+      TaskyIcons.profileUnClick,
     ];
-
+    final List<SvgPicture> clickIcons = [
+      TaskyIcons.homeClick,
+      TaskyIcons.folderClick,
+      TaskyIcons.add,
+      TaskyIcons.chatClick,
+      TaskyIcons.profileClick,
+    ];
     return Container(
       height: 82.h,
       decoration: const BoxDecoration(
@@ -64,6 +72,7 @@ class _NavBarPageState extends State<NavBarPage> {
             child: Container(
               width:  50.w,
               height: 50.h,
+              padding: EdgeInsets.all(11.e),
               decoration: isCenter
                   ? BoxDecoration(
                 shape: BoxShape.circle,
@@ -78,15 +87,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 ],
               )
                   : null,
-              child: Icon(
-                icons[index],
-                color:isCenter
-                    ? Colors.white // لون ثابت للأيقونة المركزية
-                    : (isSelected
-                    ? const Color(0xffFF8500) // لون مختار للأيقونات الأخرى
-                    : const Color(0xff848A94)),
-                size: 24.e,
-              ),
+              child:isSelected? clickIcons[index]:icons[index],
             ),
           );
         }),

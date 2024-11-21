@@ -1,3 +1,4 @@
+import 'package:final_project/core/constans/tasky_icons.dart';
 import 'package:final_project/core/services/navigation.dart';
 import 'package:final_project/view/nav_bar_page.dart';
 import 'package:final_project/widgets/tasky_button_add.dart';
@@ -38,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-
+              TaskyIcons.homeUnClick
             // const Text(
             //   'You have pushed the button this many times:',
             // ),
