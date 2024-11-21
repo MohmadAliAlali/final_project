@@ -5,6 +5,7 @@ import 'package:final_project/widgets/tasky_button_add_page.dart';
 import 'package:final_project/widgets/tasky_button_profile.dart';
 import 'package:final_project/widgets/tasky_button_user_profile.dart';
 import 'package:final_project/widgets/tasky_button_with_swich.dart';
+import 'package:final_project/widgets/tasky_container_state.dart';
 import 'package:final_project/widgets/tasky_text_form_filed_with_text.dart';
 import 'package:flutter/material.dart';
 
@@ -34,42 +35,37 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            TaskyButtonUserProfile(onPressed: () {  },
-              child: Text('data'),),
-            SizedBox(height: 20,),
-            TaskyButtonWithSwitch(onPressed: () {  },
-              child: Text('data'),),
-            SizedBox(height: 20,),
-            TaskyTextFormFiledWithText(
-              controller: _controller,
-              hintText: 'hello',
-              text: 'hello',),
-            SizedBox(height: 20,),
-            TaskyButtonAdd(
-              onPressed: (){},
-              child: Text('data',style: TextStyle(color: Colors.white),),
-            )
+
+            // const Text(
+            //   'You have pushed the button this many times:',
+            // ),
+            // Text(
+            //   '$_counter',
+            //   style: Theme.of(context).textTheme.headlineMedium,
+            // ),
+            // TaskyButtonUserProfile(onPressed: () {  },
+            //   child: Text('data'),),
+            // SizedBox(height: 20,),
+            // TaskyButtonWithSwitch(onPressed: () {  },
+            //   child: Text('data'),),
+            // SizedBox(height: 20,),
+            // TaskyTextFormFiledWithText(
+            //   controller: _controller,
+            //   hintText: 'hello',
+            //   text: 'hello',),
+            // SizedBox(height: 20,),
+            // TaskyContainerState(
+            //   onPressed: () {  },
+            //   icon: Icons.import_contacts_outlined,
+            //   child: Text('data'),
+            // )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed:(){
-          Navigation.navigateTo(context, NavBarPage());
-        },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+
     );
   }
 }
