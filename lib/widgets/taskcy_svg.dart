@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class TaskcySvg extends StatelessWidget {
   const TaskcySvg(
       {super.key,
+      // ignore: non_constant_identifier_names
       required this.TaskcySvgLink,
       this.svgWidth,
       this.svgHeight,
@@ -12,6 +13,7 @@ class TaskcySvg extends StatelessWidget {
       this.svgBottomPadding,
       this.svgRightPadding,
       this.svgColor});
+  // ignore: non_constant_identifier_names
   final String TaskcySvgLink;
   final double? svgWidth;
   final double? svgHeight;
