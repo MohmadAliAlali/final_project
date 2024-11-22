@@ -1,10 +1,9 @@
 import 'package:final_project/core/services/media_query_util.dart';
-import 'package:final_project/view/home_screen/taskcy_home_screen.dart';
-import 'package:final_project/widgets/taskcy_header.dart';
+import 'package:final_project/view/screens/authentication/signin/tasky_sigin.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
     ScreenUtil.init(context);
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: TaskcyHomeScreen(),
+      home: TaskySigin(),
     );
   }
 }

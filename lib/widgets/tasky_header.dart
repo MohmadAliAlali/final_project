@@ -1,5 +1,5 @@
 import 'package:final_project/core/services/media_query_util.dart';
-import 'package:final_project/widgets/taskcy_text.dart';
+import 'package:final_project/widgets/tasky_text.dart';
 import 'package:flutter/material.dart';
 
 class TaskcyHeader extends StatelessWidget {
@@ -13,8 +13,8 @@ class TaskcyHeader extends StatelessWidget {
     this.svgIconTwo,
     this.screenNameNavigator,
     required this.screenName,
-    required this.textLeftPadding,
-    required this.textButtonOrContainerLeftPadding,
+    this.textLeftPadding,
+    this.textButtonOrContainerLeftPadding,
   });
 
   final Widget? svgIconTwo;
@@ -29,8 +29,8 @@ class TaskcyHeader extends StatelessWidget {
   final Widget? screenNameNavigator;
   final String screenName;
 
-  final double textLeftPadding;
-  final double textButtonOrContainerLeftPadding;
+  final double? textLeftPadding;
+  final double? textButtonOrContainerLeftPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +39,7 @@ class TaskcyHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         InkWell(
-          onTap: () {
-            //navigation Function
-          },
+          onTap: () {},
           child: Container(
             margin: EdgeInsets.only(top: 16.p.top, left: 24.p.left),
             width: 42.w,
@@ -53,11 +51,11 @@ class TaskcyHeader extends StatelessWidget {
               shape: BoxShape.circle,
               color: const Color(0xffFFFFFF),
             ),
-            child: svgIconOne,
+            child: Center(child: svgIconOne),
           ),
         ),
         istextShow
-            ? TaskcyText(
+            ? TaskyText(
                 textStyle:
                     TextStyle(fontSize: 18.f, fontWeight: FontWeight.w500),
                 topPadding: 28.p.top,
@@ -73,7 +71,7 @@ class TaskcyHeader extends StatelessWidget {
                 child: Container(
                   margin: EdgeInsets.only(
                       top: ScreenUtil.screenHeight * 16,
-                      left: textButtonOrContainerLeftPadding),
+                      left: textButtonOrContainerLeftPadding ?? 0),
                   width: 42.w,
                   height: 42.h,
                   decoration: BoxDecoration(
@@ -90,7 +88,7 @@ class TaskcyHeader extends StatelessWidget {
             : isbuttonTwoShow && isButtonText
                 ? InkWell(
                     onTap: () {},
-                    child: TaskcyText(
+                    child: TaskyText(
                       textStyle: TextStyle(
                           fontSize: 18.f,
                           fontWeight: FontWeight.w500,
