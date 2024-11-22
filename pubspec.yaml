@@ -35,6 +35,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
+  flutter_svg: ^2.0.15
 
 dev_dependencies:
   flutter_test:
@@ -82,7 +83,7 @@ flutter:
     - family: Montserrat
       fonts:
         - asset: assets/fonts/Montserrat/Montserrat-Bold.ttf
-        - asset: assets/fonts/Montserrat/Raleway-semiBold.ttf
+        - asset: assets/fonts/Montserrat/Montserrat-SemiBold.ttf
         - asset: assets/fonts/Montserrat/Montserrat-Regular.ttf
         - asset: assets/fonts/Montserrat/Montserrat-Black.ttf
           weight: 700
@@ -93,10 +94,10 @@ flutter:
         - asset: assets/fonts/Poppins/Poppins-Regular.ttf
         - asset: assets/fonts/Poppins/Poppins-Black.ttf
           weight: 500 
-    - family: PollerOne
+    - family: Poller_One
       fonts: 
-        - asset: assets/fonts/Poller_One/PollerOne-Regular.tff
-          weight: 500        
+        - asset: assets/fonts/Poller_One/PollerOne-Regular.ttf
+          weight: 500     
   # fonts:
   #   - family: Schyler
   #     fonts:

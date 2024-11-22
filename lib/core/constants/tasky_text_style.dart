@@ -3,126 +3,157 @@ import 'package:flutter/material.dart';
 import 'package:tasky_project/core/constants/tasky_color.dart';
 
 class TaskyTextStyle {
-  static TextStyle nameApp = const TextStyle(
+  static TextStyle nameApp = TextStyle(
     fontFamily: 'PollerOne-Regular',
     fontSize: 46,
     fontWeight: FontWeight.w400,
     color: TaskyColor.appNameColor,
   );
-  static TextStyle welcomePagesTitle = const TextStyle(
+  static TextStyle welcomePagesTitle = TextStyle(
     fontFamily: 'Poppins',
     fontSize: 37,
     fontWeight: FontWeight.w400,
     color: TaskyColor.welcomePagesTitleColor,
   );
-  static TextStyle welcomePagesSubTitle = const TextStyle(
+  static TextStyle welcomePagesSubTitle = TextStyle(
     fontFamily: 'Poppins',
     fontSize: 37,
     fontWeight: FontWeight.w700,
     color: TaskyColor.welcomePagesSubTitleColor,
   );
-  static TextStyle taskyAppButtonTextStyle = const TextStyle(
+  static TextStyle taskyAppButtonTextStyle = TextStyle(
     fontFamily: 'Montserrat-Regular',
     fontSize: 20,
     fontWeight: FontWeight.w700,
     color: TaskyColor.taskyAppButtonTextColor,
   );
-  static TextStyle taskManagementTextStyle = const TextStyle(
+  static TextStyle taskManagementTextStyle = TextStyle(
     fontFamily: 'Poppins',
     fontSize: 18,
     fontWeight: FontWeight.w500,
     color: TaskyColor.taskManagementTextColor,
   );
 
-  static TextStyle threeOnboardingTextStyle = const TextStyle(
+  static TextStyle threeOnboardingTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 35,
     fontWeight: FontWeight.w500,
     color: TaskyColor.taskManagementTextColor,
   );
-  static TextStyle differentOrangeWordsTextStyle = const TextStyle(
+  static TextStyle differentOrangeWordsTextStyle = TextStyle(
     fontFamily: 'Poppins-Bold',
     fontSize: 35,
     fontWeight: FontWeight.w600,
     color: TaskyColor.differentOrangeWordsTextColor,
   );
-  static TextStyle skipOnboardingTextStyle = const TextStyle(
+  static TextStyle skipOnboardingTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 14,
     fontWeight: FontWeight.w600,
     color: TaskyColor.skipOnboardingTextColor,
   );
 
-  static TextStyle signinSignupTextStyle = const TextStyle(
+  static TextStyle signinSignupTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 18,
     fontWeight: FontWeight.w500,
     color: TaskyColor.signinSignupTextColor,
   );
-  static TextStyle signinSignupTitleTextStyle = const TextStyle(
+  static TextStyle signinSignupTitleTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 25,
     fontWeight: FontWeight.w600,
     color: TaskyColor.signinSignupTitleTextColor,
   );
-  static TextStyle forgetPasswordTextStyle = const TextStyle(
+  static TextStyle forgetPasswordTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 25,
     fontWeight: FontWeight.w600,
     color: TaskyColor.signinSignupTitleTextColor,
   );
-  static TextStyle signinSignupInputFieldTextStyle = const TextStyle(
+  static TextStyle signinSignupInputFieldTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 14,
     fontWeight: FontWeight.w500,
     color: TaskyColor.signinSignupInputFieldTextColor,
   );
-  static TextStyle signinSignupHintInputFieldTextStyle = const TextStyle(
+  static TextStyle signinSignupHintInputFieldTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 16,
     fontWeight: FontWeight.w400,
     color: TaskyColor.signinSignupHintInputFieldTextColor,
   );
-  static TextStyle signinSignupButtonTextStyle = const TextStyle(
+  static TextStyle signinSignupButtonTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 16,
     fontWeight: FontWeight.w500,
     color: TaskyColor.taskyAppButtonTextColor,
   );
-  static TextStyle signinSignupWithTextStyle = const TextStyle(
+  static TextStyle signinSignupWithTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 14,
     fontWeight: FontWeight.w500,
     color: TaskyColor.signinSignupsubTitleTextColor,
   );
-  static TextStyle notRegistrTextStyle = const TextStyle(
+  static TextStyle notRegistrTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: TaskyColor.signinSignupsubTitleTextColor,
   );
-  static TextStyle signUpTextStyle = const TextStyle(
+  static TextStyle signUpTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 14,
     fontWeight: FontWeight.w400,
     color: TaskyColor.differentOrangeWordsTextColor,
   );
-  static TextStyle titleHomePageTextStyle = const TextStyle(
+  static TextStyle titleHomePageTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 18,
     fontWeight: FontWeight.w500,
-    color: TaskyColor.titleHomePageTextTextColor,
+    color: TaskyColor.titleHomePageTextColor,
   );
-  static TextStyle firstTextHomePageTextStyle = const TextStyle(
+  static TextStyle firstTextHomePageTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 25,
     fontWeight: FontWeight.w600,
-    color: TaskyColor.titleHomePageTextTextColor,
+    color: TaskyColor.titleHomePageTextColor,
   );
-  static TextStyle HomePageTextStyle = const TextStyle(
+  static TextStyle HomePageTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 25,
     fontWeight: FontWeight.w600,
-    color: TaskyColor.titleHomePageTextTextColor,
+    color: TaskyColor.titleHomePageTextColor,
+  );
+  static TextStyle titleChatPageTextStyle = TextStyle(
+    fontFamily: 'Poppins-Regular',
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+    color: TaskyColor.titleChatPageTextColor,
+  );
+  static TextStyle namesChatPageTextStyle = TextStyle(
+    fontFamily: 'Poppins-Regular',
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: TaskyColor.namesChatPageTextColor,
+  );
+
+  static TextStyle lastTimeChatPageTextStyle = TextStyle(
+    fontFamily: 'Poppins-Regular',
+    fontSize: 11,
+    fontWeight: FontWeight.w400,
+    color: TaskyColor.lastTimeChatPageTextColor,
+  );
+  static TextStyle hintSearchChatPageTextStyle = TextStyle(
+    fontFamily: 'Poppins-Regular',
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: TaskyColor.hintSearchChatPageTextColor,
+  );
+  static TextStyle teamMemberNamesTextStyle = TextStyle(
+    fontFamily: 'Poppins-Regular',
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: TaskyColor.teamMemberNamesTextColor,
   );
 }

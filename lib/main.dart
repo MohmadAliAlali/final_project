@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tasky_project/view/monthly_screen/monthly_screen.dart';
+import 'package:tasky_project/view/chat_screen/chat_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,13 +12,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         fontFamily: 'Poppins-Regular',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MonthlyScreen(),
+      home: ChatScreen(),
     );
   }
 }
