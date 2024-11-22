@@ -124,4 +124,17 @@ class TaskyTextStyle {
     fontWeight: FontWeight.w600,
     color: TaskyColor.darkBlue,
   );
+
+  static TextStyle languagePageTextStyle = const TextStyle(
+    fontFamily: 'Poppins-Regular',
+    fontSize: 16,
+    fontWeight: FontWeight.w400,
+    color: TaskyColor.darkBlue,
+  );
+  static TextStyle titleLanguagePageTextStyle = const TextStyle(
+    fontFamily: 'Poppins-Regular',
+    fontSize: 18,
+    fontWeight: FontWeight.w400,
+    color: TaskyColor.darkBlue,
+  );
 }

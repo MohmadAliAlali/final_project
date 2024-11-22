@@ -171,9 +171,9 @@ class TaskyText {
 
 
 //Langauge screen
-  static const Text langauge_title = Text('Langauge',textAlign: TextAlign.center);
-  static const Text langauge_english = Text('English');
-  static const Text langauge_arabic = Text('Arabic');
-  static const Text langauge_spanish = Text('Spanish');
-  static const Text langauge_france = Text('France');
+  static Text langauge_title = Text('Langauge',textAlign: TextAlign.center,style: TaskyTextStyle.titleLanguagePageTextStyle);
+  static Text langauge_english = Text('English',style: TaskyTextStyle.languagePageTextStyle);
+  static Text langauge_arabic = Text('Arabic',style: TaskyTextStyle.languagePageTextStyle);
+  static Text langauge_spanish = Text('Spanish',style: TaskyTextStyle.languagePageTextStyle);
+  static Text langauge_france = Text('France',style: TaskyTextStyle.languagePageTextStyle);
 }
