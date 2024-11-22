@@ -1,5 +1,5 @@
-import 'package:final_project/core/services/respnsive.dart';
-import 'package:final_project/widgets/tasky_button_add_page.dart';
+import 'package:final_project/core/services/responsive.dart';
+import 'package:final_project/widgets/tasky_button_root.dart';
 import 'package:flutter/material.dart';
 
 class TaskyButtonUserProfile extends StatelessWidget {
@@ -23,7 +23,7 @@ class TaskyButtonUserProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TaskyButtonAddPage(
+    return TaskyButtonRoot(
       onPressed: onPressed,
       width: width,
       height: height,
@@ -35,8 +35,6 @@ class TaskyButtonUserProfile extends StatelessWidget {
         children: [
           Text(text),
           Icon(icon,size: 20.e,),
-
-
         ],
       ),
     );

@@ -1,5 +1,5 @@
-import 'package:final_project/core/services/respnsive.dart';
-import 'package:final_project/widgets/tasky_button_add_page.dart';
+import 'package:final_project/core/services/responsive.dart';
+import 'package:final_project/widgets/tasky_button_root.dart';
 import 'package:flutter/material.dart';
 
 class TaskyButtonWithSwitch extends StatefulWidget {
@@ -31,7 +31,7 @@ class _TaskyButtonWithSwitchState extends State<TaskyButtonWithSwitch> {
 
   @override
   Widget build(BuildContext context) {
-    return TaskyButtonAddPage(
+    return TaskyButtonRoot(
       onPressed: widget.onPressed,
       width: widget.width,
       height: widget.height,
@@ -43,7 +43,7 @@ class _TaskyButtonWithSwitchState extends State<TaskyButtonWithSwitch> {
         children: [
           Text(widget.text),
           Transform.scale(
-            scale: 0.6.e, // Adjust size
+            scale: 0.65.h, // Adjust size
             child: Switch(
               value: isTrue,
               // activeColor: Colors.orange,

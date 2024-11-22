@@ -2,7 +2,7 @@ import 'package:final_project/view/home_screen/home_screen.dart';
 import 'package:final_project/view/nav_bar_page.dart';
 import 'package:flutter/material.dart';
 
-import 'core/services/respnsive.dart';
+import 'core/services/responsive.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      debugShowCheckedModeBanner: false,
       home: NavBarPage()
     );
   }

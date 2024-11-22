@@ -1,9 +1,12 @@
-import 'package:final_project/core/services/respnsive.dart';
+import 'package:final_project/core/constans/tasky_icons.dart';
+import 'package:final_project/core/services/responsive.dart';
 import 'package:final_project/view/home_screen/home_screen.dart';
+import 'package:final_project/widgets/tasky_button_add.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class NavBarPage extends StatefulWidget {
-  const NavBarPage({Key? key}) : super(key: key);
+  const NavBarPage({super.key});
 
   @override
   State<NavBarPage> createState() => _NavBarPageState();
@@ -13,8 +16,8 @@ class _NavBarPageState extends State<NavBarPage> {
   int visit = 0;
 
   final List<Widget> pages = [
-    MyHomePage(title: '',),
-    const Scaffold(body: Center(child: Text("Shop Page"))),
+    const MyHomePage(),
+    const MyHomePage(),
     const Scaffold(body: Center(child: Text("Wishlist Page"))),
     const Scaffold(body: Center(child: Text("Cart Page"))),
     const Scaffold(body: Center(child: Text("Profile Page"))),
@@ -29,14 +32,20 @@ class _NavBarPageState extends State<NavBarPage> {
   }
 
   Widget _buildCustomNavBar() {
-    final List<IconData> icons = [
-      Icons.home,
-      Icons.search_sharp,
-      Icons.favorite_border,
-      Icons.shopping_cart_outlined,
-      Icons.account_box,
+    final List<SvgPicture> icons = [
+      TaskyIcons.homeUnClick,
+      TaskyIcons.folderUnClick,
+      TaskyIcons.add,
+      TaskyIcons.chatUnClick,
+      TaskyIcons.profileUnClick,
     ];
-
+    final List<SvgPicture> clickIcons = [
+      TaskyIcons.homeClick,
+      TaskyIcons.folderClick,
+      TaskyIcons.add,
+      TaskyIcons.chatClick,
+      TaskyIcons.profileClick,
+    ];
     return Container(
       height: 82.h,
       decoration: const BoxDecoration(
@@ -52,18 +61,25 @@ class _NavBarPageState extends State<NavBarPage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: List.generate(icons.length, (index) {
-          final bool isCenter = index == 2; // تحديد العنصر الأوسط
+          final bool isCenter = index == 2;
           final bool isSelected = visit == index;
 
           return GestureDetector(
             onTap: () {
-              setState(() {
-                visit = index;
-              });
+              if (isCenter) {
+                // Action for center button
+                _showModalBottomSheet(); // Example: open a bottom sheet
+              } else {
+                // Regular navigation for other items
+                setState(() {
+                  visit = index;
+                });
+              }
             },
             child: Container(
-              width:  50.w,
+              width: 50.w,
               height: 50.h,
+              padding: EdgeInsets.fromLTRB(11.w, 11.h, 11.w, 11.h),
               decoration: isCenter
                   ? BoxDecoration(
                 shape: BoxShape.circle,
@@ -78,19 +94,86 @@ class _NavBarPageState extends State<NavBarPage> {
                 ],
               )
                   : null,
-              child: Icon(
-                icons[index],
-                color:isCenter
-                    ? Colors.white // لون ثابت للأيقونة المركزية
-                    : (isSelected
-                    ? const Color(0xffFF8500) // لون مختار للأيقونات الأخرى
-                    : const Color(0xff848A94)),
-                size: 24.e,
-              ),
+              child: isSelected ? clickIcons[index] : icons[index],
             ),
           );
         }),
       ),
+    );
+  }
+  void _showModalBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      shape:  RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(30.r),
+        ),
+      ),
+      builder: (context) {
+        return Padding(
+            padding:  EdgeInsets.fromLTRB(24.w,16.0.h,24.w,16.h),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  height: 4.h,
+                  width: 42.w,
+                  margin: EdgeInsets.only(bottom: 30.h),
+                  decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  color: Color(0xffDFDFDF),
+
+                 ),
+                ),
+                TaskyButtonAdd(
+                  onPressed: () {  },
+                  text: 'Create Task',
+                  icon: TaskyIcons.editSquareAddScreen,
+                ),
+                SizedBox(height: 20.h,),
+                TaskyButtonAdd(
+                  onPressed: () {  },
+                  text: 'Create Project',
+                  icon: TaskyIcons.plusAddScreen,
+                ),
+                SizedBox(height: 20.h,),
+
+                TaskyButtonAdd(
+                  onPressed: () {  },
+                  text: 'Create Team',
+                  icon: TaskyIcons.groupUsers,
+                ),
+                SizedBox(height: 20.h,),
+
+                TaskyButtonAdd(
+                  onPressed: () {  },
+                  text: 'Create Event',
+                  icon: TaskyIcons.timeCircleAddScreen,
+                ),
+                Container(
+                  width: 50.w,
+                  height: 50.h,
+                  padding: EdgeInsets.fromLTRB(11.w, 11.h, 11.w, 11.h),
+                  margin: EdgeInsets.only(top: 13.h),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.orange,
+                    border: Border.all(color: Color(0xffFFC07B),width: 1.e),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.3),
+                        blurRadius: 4,
+                        spreadRadius: 1,
+                        offset: const Offset(0, 4),
+                      ),
+                    ],
+                  ),
+                  child: TaskyIcons.falseMarkAddScreen,
+                ),
+              ],
+            ),
+        );
+      },
     );
   }
 }

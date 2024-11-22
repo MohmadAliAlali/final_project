@@ -1,37 +1,35 @@
- import 'package:final_project/core/constans/tasky_text_style.dart';
+import 'package:final_project/core/constants/tasky_text_style.dart';
 import 'package:flutter/material.dart';
 
 class TaskyText {
 
 
-  static  Text artboard_appTitle = Text('Tasky',textAlign: TextAlign.center);
-  static  Text artboard_buildingBetter = Text('Building Better',textAlign: TextAlign.center);
-  static  Text artboard_workplaces = Text('Workplaces',textAlign: TextAlign.center);
-  static const Text artboard_create = Text('Create a unique emotional story that',textAlign: TextAlign.center);
-  static const Text artboard_description = Text('describes better than words',textAlign: TextAlign.center);
-  static const Text artboard_getStartedButton = Text('Get Started',textAlign: TextAlign.center);
+  static  Text artBoardAppTitle = Text('Tasky',textAlign: TextAlign.center,style: TaskyTextStyle.nameApp,);
+  static  Text artBoardBuildingBetter = Text('Building Better Workplaces',textAlign: TextAlign.center,style: TaskyTextStyle.welcomePagesTitle,);
+  static  Text artBoardCreate = Text('Create a unique emotional story that describes better than words',textAlign: TextAlign.center, style: TaskyTextStyle.welcomePagesSubTitle,);
+  static  Text artBoardGetStartedButton = Text('Get Started',textAlign: TextAlign.center, style:  TaskyTextStyle.taskyAppButtonTextStyle,);
 
   //Onboard  screen
-  static const Text onboard_title = Text('Task Management');
-  static const Text onboard_skipButton = Text('Skip',textAlign: TextAlign.center);
+  static  Text onboardTitle = Text('Task Management',style: TaskyTextStyle.taskManagementTextStyle,);
+  static  Text onboardSkipButton = Text('Skip',textAlign: TextAlign.center,style: TaskyTextStyle.skipOnboardingTextStyle,);
 
   //Onboard 6 screen
-  static const Text onboard6_tagline1 = Text('Let’s create a ');
-  static const Text onboard6_tagline2 = Text('space ');
-  static const Text onboard6_tagline3 = Text('for your  ');
-  static const Text onboard6_tagline4 = Text('workflows.');
+  static  Text onboard6_tagline1 = Text('Let’s create a ',style: TaskyTextStyle.threeOnboardingTextStyle,);
+  static  Text onboard6_tagline2 = Text('space ',style:TaskyTextStyle.differentOrangeWordsTextStyle ,);
+  static  Text onboard6_tagline3 = Text('for your  ',style: TaskyTextStyle.threeOnboardingTextStyle);
+  static  Text onboard6_tagline4 = Text('workflows.',style: TaskyTextStyle.threeOnboardingTextStyle);
 
   //Onboard 4 screen
-  static const Text onboard4_tagline1 = Text('Work more ');
-  static const Text onboard4_tagline2 = Text('Structured  ');
-  static const Text onboard4_tagline3 = Text('and  ');
-  static const Text onboard4_tagline4 = Text('Organized  ');
+  static Text onboard4_tagline1 = Text('Work more ',style: TaskyTextStyle.threeOnboardingTextStyle);
+  static Text onboard4_tagline2 = Text('Structured  ',style:TaskyTextStyle.differentOrangeWordsTextStyle );
+  static Text onboard4_tagline3 = Text('and  ',style: TaskyTextStyle.threeOnboardingTextStyle);
+  static Text onboard4_tagline4 = Text('Organized 👌 ',style: TaskyTextStyle.threeOnboardingTextStyle);
 
 //Onboard 5 screen
-  static const Text onboard5_tagline1 = Text('Manage your');
-  static const Text onboard5_tagline2 = Text('Tasks ');
-  static const Text onboard5_tagline3 = Text('quickly for');
-  static const Text onboard5_tagline4 = Text('Results');
+  static  Text onboard5_tagline1 = Text('Manage your',style: TaskyTextStyle.threeOnboardingTextStyle);
+  static  Text onboard5_tagline2 = Text('Tasks ',style:TaskyTextStyle.differentOrangeWordsTextStyle );
+  static  Text onboard5_tagline3 = Text('quickly for',style: TaskyTextStyle.threeOnboardingTextStyle);
+  static  Text onboard5_tagline4 = Text('Results ✌️',style: TaskyTextStyle.threeOnboardingTextStyle);
 
 
 
