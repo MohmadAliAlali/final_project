@@ -1,3 +1,4 @@
+import 'package:final_project/core/constans/tasky_color.dart';
 import 'package:final_project/core/constans/tasky_icons.dart';
 import 'package:final_project/core/services/responsive.dart';
 import 'package:final_project/view/home_screen/home_screen.dart';
@@ -157,8 +158,8 @@ class _NavBarPageState extends State<NavBarPage> {
                   margin: EdgeInsets.only(top: 13.h),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.orange,
-                    border: Border.all(color: Color(0xffFFC07B),width: 1.e),
+                    color: TaskyColor.orange,
+                    border: Border.all(color: TaskyColor.lightOrange3,width: 1.e),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withOpacity(0.3),

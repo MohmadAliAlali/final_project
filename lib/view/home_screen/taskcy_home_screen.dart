@@ -1,7 +1,5 @@
 import 'package:final_project/core/services/media_query_util.dart';
 import 'package:final_project/widgets/tasky_header.dart';
-import 'package:final_project/widgets/tasky_svg.dart';
-import 'package:final_project/widgets/tasky_text.dart';
 import 'package:flutter/material.dart';
 
 class TaskcyHomeScreen extends StatelessWidget {
@@ -10,7 +8,7 @@ class TaskcyHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffFFFFFF),
+      backgroundColor: const Color(0xffFFFFFF),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

@@ -26,10 +26,10 @@ class TaskyButtonWithSwitch extends StatefulWidget {
   });
 
   @override
-  _TaskyButtonWithSwitchState createState() => _TaskyButtonWithSwitchState();
+  TaskyButtonWithSwitchState createState() => TaskyButtonWithSwitchState();
 }
 
-class _TaskyButtonWithSwitchState extends State<TaskyButtonWithSwitch> {
+class TaskyButtonWithSwitchState extends State<TaskyButtonWithSwitch> {
   bool isTrue = false;
 
   @override

@@ -3,10 +3,7 @@ import 'package:final_project/core/constans/tasky_text.dart';
 import 'package:final_project/core/constans/tasky_text_style.dart';
 import 'package:final_project/core/services/media_query_util.dart';
 import 'package:final_project/core/services/navigation.dart';
-import 'package:final_project/view/nav_bar_page.dart';
-import 'package:final_project/widgets/tasky_button_add.dart';
-import 'package:final_project/widgets/tasky_button_root.dart';
-import 'package:final_project/widgets/tasky_button_profile.dart';
+import 'package:final_project/view/settings_screen/settings_screen.dart';
 import 'package:final_project/widgets/tasky_button_user_profile.dart';
 import 'package:final_project/widgets/tasky_button_with_swich.dart';
 import 'package:final_project/widgets/tasky_container_state.dart';
@@ -41,9 +38,11 @@ class _MyHomePageState extends State<MyHomePage> {
               textButtonOrContainerLeftPadding: 50.w,
               svgIconOne: TaskyIcons.backArrowIos
             ),
-            TaskyButtonUserProfile(onPressed: () {  },
+            TaskyButtonUserProfile(onPressed: () {
+              Navigation.navigateTo(context, SettingPage());
+            },
               text: TaskyText.profileMyProjects,
-              child: Text('data'),),
+              ),
             const SizedBox(height: 20,),
             TaskyButtonWithSwitch(onPressed: () {  },
               text: TaskyText.settingsPermission,
@@ -65,7 +64,6 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {  },
               icon: Icons.import_contacts_outlined,
               onPressedMore: () {
-                print('object');
               },
               description: Text('TaskyText.taskStatusInProgress2',style: TaskyTextStyle.text12grayText1400,)
             )

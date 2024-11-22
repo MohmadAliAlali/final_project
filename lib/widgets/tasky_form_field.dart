@@ -18,7 +18,7 @@ class CustomWidgets {
                 borderRadius: BorderRadius.circular(12),
               ),
               hintText: hintText,
-              hintStyle: TaskyTextStyle.text16Black400,
+              hintStyle: TaskyTextStyle.text16darkBlue500,
               suffixIcon: Transform.scale(
                 scale: 0.8,
                 child: Switch(
@@ -46,7 +46,7 @@ class CustomWidgets {
             borderRadius: BorderRadius.circular(12),
           ),
           hintText: hintText,
-          hintStyle: TaskyTextStyle.text16Black400,
+          hintStyle: TaskyTextStyle.text16darkBlue500,
           suffixIcon: Transform.scale(
             scale: 0.8,
             child: Transform.rotate(

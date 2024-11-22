@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 class TaskyButtonUserProfile extends StatelessWidget {
   final VoidCallback onPressed;
-  final Widget child;
   final double width;
   final double height;
   final Color color;
@@ -14,7 +13,6 @@ class TaskyButtonUserProfile extends StatelessWidget {
   const TaskyButtonUserProfile({
     super.key,
     required this.onPressed,
-    required this.child,
     required this.text,
     this.width = 327,
     this.height = 56,

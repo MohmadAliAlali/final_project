@@ -1,3 +1,4 @@
+import 'package:final_project/core/services/media_query_util.dart';
 import 'package:final_project/widgets/tasky_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:final_project/core/constans/tasky_color.dart';
@@ -29,12 +30,12 @@ class _SettingPageState extends State<SettingPage> {
             Navigator.pop(context);
           },
         ),
-        title: const Text(
+        title:  Text(
           'Settings',
           style: TextStyle(
             color: TaskyColor.black1,
             fontFamily: 'Poppins',
-            fontSize: 18,
+            fontSize: 18.f,
             fontWeight: FontWeight.w500,
             height: 1.0,
             decoration: TextDecoration.none,
@@ -48,7 +49,7 @@ class _SettingPageState extends State<SettingPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(height: 40),
+              SizedBox(height: 40.h),
               CustomWidgets.buildSwitchField('Permission', _switchLanguage,
                   (value) {
                 setState(() {
