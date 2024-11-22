@@ -1,4 +1,3 @@
-import 'package:final_project/view/home_screen/home_screen.dart';
 import 'package:final_project/view/nav_bar_page.dart';
 import 'package:flutter/material.dart';
 

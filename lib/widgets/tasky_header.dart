@@ -15,22 +15,24 @@ class TaskcyHeader extends StatelessWidget {
     required this.screenName,
     required this.textLeftPadding,
     required this.textButtonOrContainerLeftPadding,
+    this.onPressedLeading,
+    this.onPressedActions,
+
+
   });
 
   final Widget? svgIconTwo;
   final Widget? svgIconOne;
-
   final bool isbuttonTwoShow;
   final bool istextShow;
-
   final bool isButtonText;
   final bool isButtonContainer;
-
   final Widget? screenNameNavigator;
   final String screenName;
-
   final double textLeftPadding;
   final double textButtonOrContainerLeftPadding;
+  final VoidCallback? onPressedLeading;
+  final VoidCallback? onPressedActions;
 
   @override
   Widget build(BuildContext context) {
@@ -39,13 +41,12 @@ class TaskcyHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         InkWell(
-          onTap: () {
-            //navigation Function
-          },
+          onTap: onPressedLeading,
           child: Container(
             margin: EdgeInsets.only(top: 16.p.top, left: 24.p.left),
             width: 42.w,
             height: 42.h,
+            padding: 7.p,
             decoration: BoxDecoration(
               border: Border.all(
                 color: const Color(0xffDFDFDF),
@@ -69,7 +70,7 @@ class TaskcyHeader extends StatelessWidget {
               ),
         isbuttonTwoShow && isButtonContainer
             ? InkWell(
-                onTap: () {},
+                onTap: onPressedActions,
                 child: Container(
                   margin: EdgeInsets.only(
                       top: ScreenUtil.screenHeight * 16,
@@ -89,7 +90,7 @@ class TaskcyHeader extends StatelessWidget {
               )
             : isbuttonTwoShow && isButtonText
                 ? InkWell(
-                    onTap: () {},
+                    onTap: onPressedActions,
                     child: TaskcyText(
                       textStyle: TextStyle(
                           fontSize: 18.f,

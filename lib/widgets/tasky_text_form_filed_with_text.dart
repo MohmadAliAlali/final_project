@@ -7,18 +7,20 @@ import 'package:flutter/material.dart';
 class TaskyTextFormFiledWithText extends StatefulWidget {
   final TextEditingController controller;
   final String hintText;
-  final String text;
+  final Text text;
   final Color color;
   final TextInputType keyboardType;
   final bool obscureText;
-  final IconData? prefixIcon;
-  final IconData? suffixIcon;
+  final Widget? prefixIcon;
+  final Widget? suffixIcon;
   final String? errorMessage;
   final String? Function(String?)? validator;
   final double pt;
   final double pb;
   final double pl;
   final double pr;
+  final double width;
+  final double height;
 
   const TaskyTextFormFiledWithText({
     super.key,
@@ -35,6 +37,8 @@ class TaskyTextFormFiledWithText extends StatefulWidget {
     this.pb = 0,
     this.pl = 0,
     this.pr = 0,
+    this.width = 327,
+    this.height = 85,
     this.errorMessage,
   });
 
@@ -58,11 +62,11 @@ class TaskyTextFormFiledWithTextState
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(widget.text),
+        widget.text,
         TaskyTextField(
           controller: widget.controller,
           hintText: widget.hintText,
-          text: widget.text,
+          text: '',
           color: widget.color,
           errorMessage: widget.errorMessage,
           keyboardType: widget.keyboardType,
@@ -74,6 +78,8 @@ class TaskyTextFormFiledWithTextState
           pt: widget.pt.h,
           suffixIcon: widget.suffixIcon,
           validator: widget.validator,
+          width: widget.width,
+          height: widget.height,
         )
       ],
     );

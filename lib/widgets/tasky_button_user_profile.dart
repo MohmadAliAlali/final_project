@@ -9,16 +9,18 @@ class TaskyButtonUserProfile extends StatelessWidget {
   final double height;
   final Color color;
   final IconData icon;
-  final String text;
+  final TextStyle? style;
+  final Text text;
   const TaskyButtonUserProfile({
     super.key,
     required this.onPressed,
     required this.child,
+    required this.text,
     this.width = 327,
     this.height = 56,
     this.color = Colors.transparent,
     this.icon = Icons.arrow_forward_ios,
-    this.text = 'create',
+    this.style,
   });
 
   @override
@@ -33,7 +35,7 @@ class TaskyButtonUserProfile extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(text),
+          text,
           Icon(icon,size: 20.e,),
         ],
       ),

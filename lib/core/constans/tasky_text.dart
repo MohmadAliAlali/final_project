@@ -1,4 +1,4 @@
-import 'package:final_project/core/constants/tasky_text_style.dart';
+import 'package:final_project/core/constans/tasky_text_style.dart';
 import 'package:flutter/material.dart';
 
 class TaskyText {
@@ -14,166 +14,163 @@ class TaskyText {
   static  Text onboardSkipButton = Text('Skip',textAlign: TextAlign.center,style: TaskyTextStyle.skipOnboardingTextStyle,);
 
   //Onboard 6 screen
-  static  Text onboard6_tagline1 = Text('Let’s create a ',style: TaskyTextStyle.threeOnboardingTextStyle,);
-  static  Text onboard6_tagline2 = Text('space ',style:TaskyTextStyle.differentOrangeWordsTextStyle ,);
-  static  Text onboard6_tagline3 = Text('for your  ',style: TaskyTextStyle.threeOnboardingTextStyle);
-  static  Text onboard6_tagline4 = Text('workflows.',style: TaskyTextStyle.threeOnboardingTextStyle);
+  static  Text onboard6Tagline1 = Text('Let’s create a ',style: TaskyTextStyle.threeOnboardingTextStyle,);
+  static  Text onboard6Tagline2 = Text('space ',style:TaskyTextStyle.differentOrangeWordsTextStyle ,);
+  static  Text onboard6Tagline3 = Text('for your  ',style: TaskyTextStyle.threeOnboardingTextStyle);
+  static  Text onboard6Tagline4 = Text('workflows.',style: TaskyTextStyle.threeOnboardingTextStyle);
 
   //Onboard 4 screen
-  static Text onboard4_tagline1 = Text('Work more ',style: TaskyTextStyle.threeOnboardingTextStyle);
-  static Text onboard4_tagline2 = Text('Structured  ',style:TaskyTextStyle.differentOrangeWordsTextStyle );
-  static Text onboard4_tagline3 = Text('and  ',style: TaskyTextStyle.threeOnboardingTextStyle);
-  static Text onboard4_tagline4 = Text('Organized 👌 ',style: TaskyTextStyle.threeOnboardingTextStyle);
+  static Text onboard4Tagline1 = Text('Work more ',style: TaskyTextStyle.threeOnboardingTextStyle);
+  static Text onboard4Tagline2 = Text('Structured  ',style:TaskyTextStyle.differentOrangeWordsTextStyle );
+  static Text onboard4Tagline3 = Text('and  ',style: TaskyTextStyle.threeOnboardingTextStyle);
+  static Text onboard4Tagline4 = Text('Organized 👌 ',style: TaskyTextStyle.threeOnboardingTextStyle);
 
 //Onboard 5 screen
-  static  Text onboard5_tagline1 = Text('Manage your',style: TaskyTextStyle.threeOnboardingTextStyle);
-  static  Text onboard5_tagline2 = Text('Tasks ',style:TaskyTextStyle.differentOrangeWordsTextStyle );
-  static  Text onboard5_tagline3 = Text('quickly for',style: TaskyTextStyle.threeOnboardingTextStyle);
-  static  Text onboard5_tagline4 = Text('Results ✌️',style: TaskyTextStyle.threeOnboardingTextStyle);
+  static  Text onboard5Tagline1 = Text('Manage your',style: TaskyTextStyle.threeOnboardingTextStyle);
+  static  Text onboard5Tagline2 = Text('Tasks ',style:TaskyTextStyle.differentOrangeWordsTextStyle );
+  static  Text onboard5Tagline3 = Text('quickly for',style: TaskyTextStyle.threeOnboardingTextStyle);
+  static  Text onboard5Tagline4 = Text('Results ✌️',style: TaskyTextStyle.threeOnboardingTextStyle);
 
 
 
 
   // Signin screen
-  static const Text signIn_title =  Text('Sign In',textAlign: TextAlign.center);
-  static const Text signIn_welcomeBack = Text('Welcome Back');
-  static const Text signIn_subtitle1 = Text('Please enter your email address');
-  static const Text signIn_subtitle2 = Text('and password for Login');
-  static const Text signIn_emailPlaceholder = Text('Enter your email');
-  static const Text signIn_passwordPlaceholder = Text('Enter your password');
-  static const Text signIn_forgotPassword =  Text('Forgot Password?',textAlign: TextAlign.right);
-  static const Text signInButton = Text('Sign In',textAlign: TextAlign.center);
-  static const Text signInWith = Text('Signin with',textAlign: TextAlign.center);
-  static const Text signIn_notRegistered = Text('Not Registered Yet?',textAlign: TextAlign.center);
-  static const Text signIn_signUp = Text('Sign Up',textAlign: TextAlign.center);
+  static  Text signInTitle =  Text('Sign In',textAlign: TextAlign.center,style: TaskyTextStyle.signInSignupTextStyle,);
+  static  Text signInWelcomeBack = Text('Welcome Back',style:TaskyTextStyle.signinSignupTitleTextStyle ,);
+  static  Text signInSubtitle1 = Text('Please enter your email address and password for Login',textAlign: TextAlign.left,style: TaskyTextStyle.signInSignupInputFieldTextStyle,);
+  static  Text signInEmailPlaceholder = Text('Enter your email',style: TaskyTextStyle.signInSignupHintInputFieldTextStyle,);
+  static  Text signInPasswordPlaceholder = Text('Enter your password',style: TaskyTextStyle.signInSignupHintInputFieldTextStyle,);
+  static  Text signInForgotPassword =  Text('Forgot Password?',textAlign: TextAlign.right,style: TaskyTextStyle.forgetPasswordTextStyle,);
+  static  Text signInButton = Text('Sign In',textAlign: TextAlign.center,style: TaskyTextStyle.signInSignupButtonTextStyle,);
+  static  Text signInWith = Text('Signin with',textAlign: TextAlign.center,style: TaskyTextStyle.signInSignupWithTextStyle,);
+  static  Text signInNotRegistered = Text('Not Registered Yet?',textAlign: TextAlign.center,style: TaskyTextStyle.notRegistrarTextStyle,);
+  static  Text signInSignUp = Text('Sign Up',textAlign: TextAlign.center,style: TaskyTextStyle.signUpTextStyle,);
 
   // Signup screen
-  static const Text signUp_title = Text('Sign Up',textAlign: TextAlign.center);
-  static const Text signUp_welcomeBack = Text('Create Account');
-  static const Text signUp_subtitle1 = Text('Please Inter your Informatioin and');
-  static const Text signUp_subtitle2 = Text('create your account');
-  static const Text signUp_namePlaceholder = Text('Enter your name');
-  static const Text signUp_emailPlaceholder = Text('Enter your email');
-  static const Text signUp_passwordPlaceholder = Text('Enter your password');
-  static const Text signUpButton = Text('Sign Up',textAlign: TextAlign.center);
-  static const Text signUpWith = Text('Signup with',textAlign: TextAlign.center);
-  static const Text signUp_haveAccount = Text('Have an Account?',textAlign: TextAlign.center);
-  static const Text signUp_signIn = Text('Sign In',textAlign: TextAlign.center);
+  static  Text signUpTitle = Text('Sign Up',textAlign: TextAlign.center,style: TaskyTextStyle.signInSignupTextStyle,);
+  static  Text signUpWelcomeBack = Text('Create Account',style:TaskyTextStyle.signinSignupTitleTextStyle);
+  static  Text signUpSubtitle1 = Text('Please Inter your Informatioin and create your account',textAlign: TextAlign.left,style: TaskyTextStyle.signInSignupInputFieldTextStyle);
+  static  Text signUpNamePlaceholder = Text('Enter your name',style: TaskyTextStyle.signInSignupHintInputFieldTextStyle);
+  static  Text signUpEmailPlaceholder = Text('Enter your email',style: TaskyTextStyle.signInSignupHintInputFieldTextStyle);
+  static  Text signUpPasswordPlaceholder = Text('Enter your password',style: TaskyTextStyle.signInSignupHintInputFieldTextStyle);
+  static  Text signUpButton = Text('Sign Up',textAlign: TextAlign.center,style: TaskyTextStyle.signInSignupButtonTextStyle);
+  static  Text signUpWith = Text('Signup with',textAlign: TextAlign.center,style: TaskyTextStyle.signInSignupWithTextStyle);
+  static  Text signUpHaveAccount = Text('Have an Account?',textAlign: TextAlign.center,style: TaskyTextStyle.notRegistrarTextStyle,);
+  static  Text signUpSignIn = Text('Sign In',textAlign: TextAlign.center,style: TaskyTextStyle.signUpTextStyle,);
 
 
   //Home screen
-  static const Text home_subtitle1 =  Text('Let’s make a');
-  static const Text home_subtitle2 =  Text('habits together');
-  static const Text home_inProgress = Text('inprogress');
+  static Text homeSubtitle1 =  Text('Let’s make a habits together  🙌',textAlign: TextAlign.left,style: TaskyTextStyle.firstTextHomePageTextStyle,);
+  static Text homeInProgress = Text('inprogress',style: TaskyTextStyle.text18gray0500,);
 
   //Today Task Details screen
-  static const Text todayTask_title = Text('Today Task',textAlign: TextAlign.center);
+  static  Text todayTaskTitle = Text('Today Task',textAlign: TextAlign.center,style: TaskyTextStyle.titleHomePageTextStyle,);
 
   //Monthly Task screen
-  static const Text monthlyTask_title = Text('Monthly Task',textAlign: TextAlign.center);
+  static  Text monthlyTaskTitle = Text('Monthly Task',textAlign: TextAlign.center,style: TaskyTextStyle.titleHomePageTextStyle,);
 
   //Projects screen
-  static const Text projects_title = Text('Projects',textAlign: TextAlign.center);
-  static const Text projects_search = Text('Search');
-  static const Text projects_favourites = Text('Favourites',textAlign: TextAlign.center);
-  static const Text projects_recents = Text('Recents',textAlign: TextAlign.center);
-  static const Text projects_all = Text('All',textAlign: TextAlign.center);
+  static Text projectsTitle = Text('Projects',textAlign: TextAlign.center,style: TaskyTextStyle.titleHomePageTextStyle,);
+  static Text projectsSearch = Text('Search',style: TaskyTextStyle.text14grayText1500,);
+  static Text projectsFavourites = Text('Favourites',textAlign: TextAlign.center,style: TaskyTextStyle.text14darkBlue500,);
+  static Text projectsRecents = Text('Recents',textAlign: TextAlign.center,style: TaskyTextStyle.text14grayText1500);
+  static Text projectsAll = Text('All',textAlign: TextAlign.center,style: TaskyTextStyle.text14grayText1500);
 
   //Add screen
-  static const Text add_createTask = Text('Create Task');
-  static const Text add_createProject = Text('Create Project');
-  static const Text add_createTeam = Text('Create Team');
-  static const Text add_createEvent = Text('Create Event');
+  static Text addCreateTask = Text('Create Task',style: TaskyTextStyle.text14darkBlue500,);
+  static Text addCreateProject = Text('Create Project',style: TaskyTextStyle.text14darkBlue500);
+  static Text addCreateTeam = Text('Create Team',style: TaskyTextStyle.text14darkBlue500);
+  static Text addCreateEvent = Text('Create Event',style: TaskyTextStyle.text14darkBlue500);
 
   //Add Task screen
-  static const Text addTask_title = Text('Add Task',textAlign: TextAlign.center);
-  static const Text addTask_taskName = Text('Task Name');
-  static const Text addTask_teamMember = Text('Team Member');
-  static const Text addTask_date = Text('Date');
-  static const Text addTask_startTime = Text('Start Time');
-  static const Text addTask_endTime = Text('End Time');
-  static const Text addTask_Board = Text('Board');
-  static const Text addTask_urgent = Text('Urgent',textAlign: TextAlign.center);
-  static const Text addTask_running = Text('Running',textAlign: TextAlign.center);
-  static const Text addTask_ongoing = Text('ongoing',textAlign: TextAlign.center);
-  static const Text addTask_saveButton = Text('Save',textAlign: TextAlign.center);
+  static Text addTaskTitle = Text('Add Task',textAlign: TextAlign.center,style: TaskyTextStyle.titleHomePageTextStyle,);
+  static Text addTaskTaskName = Text('Task Name',style: TaskyTextStyle.text14grayText1500,);
+  static Text addTaskTeamMember = Text('Team Member',style: TaskyTextStyle.text14grayText1500,);
+  static Text addTaskDate = Text('Date',style: TaskyTextStyle.text14grayText1500);
+  static Text addTaskStartTime = Text('Start Time',style: TaskyTextStyle.text14grayText1500,);
+  static Text addTaskEndTime = Text('End Time',style: TaskyTextStyle.text14grayText1500,);
+  static Text addTaskBoard = Text('Board',style: TaskyTextStyle.text14grayText1500);
+  static Text addTaskUrgent = Text('Urgent',textAlign: TextAlign.center,style: TaskyTextStyle.text14grayText1500);
+  static Text addTaskRunning = Text('Running',textAlign: TextAlign.center,style: TaskyTextStyle.text14grayText1500);
+  static Text addTaskOngoing = Text('ongoing',textAlign: TextAlign.center,style: TaskyTextStyle.text14grayText1500);
+  static Text addTaskSaveButton = Text('Save',textAlign: TextAlign.center,style: TaskyTextStyle.text14white500);
 
   //Create Team screen
-  static const Text createTeam_title = Text('Create Team',textAlign: TextAlign.center);
-  static const Text createTeam_teamName = Text('Teame Name');
-  static const Text createTeam_teamMember = Text('Team Member');
-  static const Text createTeam_type = Text('Type');
-  static const Text createTeam_private = Text('Private',textAlign: TextAlign.center);
-  static const Text createTeam_public = Text('Public',textAlign: TextAlign.center);
-  static const Text createTeam_secret = Text('Secret',textAlign: TextAlign.center);
-  static const Text createTeam_createTeamButton = Text('Create team',textAlign: TextAlign.center);
+  static Text createTeamTitle = Text('Create Team',textAlign: TextAlign.center,style: TaskyTextStyle.titleHomePageTextStyle);
+  static Text createTeamTeamName = Text('Team Name',style: TaskyTextStyle.text14grayText1500);
+  static Text createTeamTeamMember = Text('Team Member',style: TaskyTextStyle.text14grayText1500);
+  static Text createTeamType = Text('Type',style: TaskyTextStyle.text14grayText1500);
+  static Text createTeamPrivate = Text('Private',textAlign: TextAlign.center,style: TaskyTextStyle.text14grayText1500);
+  static Text createTeamPublic = Text('Public',textAlign: TextAlign.center,style: TaskyTextStyle.text14grayText1500);
+  static Text createTeamSecret = Text('Secret',textAlign: TextAlign.center,style: TaskyTextStyle.text14grayText1500);
+  static Text createTeamCreateTeamButton = Text('Create team',textAlign: TextAlign.center,style: TaskyTextStyle.text14white500);
 
 
 //Chat screen
-  static const Text chat_title = Text('Chat',textAlign: TextAlign.center);
-  static const Text chat_search = Text('Search');
+  static  Text chatTitle = Text('Chat',textAlign: TextAlign.center,style: TaskyTextStyle.titleHomePageTextStyle);
+  static  Text chatSearch = Text('Search',style: TaskyTextStyle.text14grayText1500);
 
 //Task Status screen
-  static const Text taskStatus_title = Text('Task Status',textAlign: TextAlign.center);
-  static const Text taskStatus_cpmplete = Text('Cpmplete',textAlign: TextAlign.center);
-  static const Text taskStatus_toDo1 = Text('To Do');
-  static const Text taskStatus_toDo2 = Text('To Do');
-  static const Text taskStatus_inProgress1 = Text('In Progress');
-  static const Text taskStatus_inProgress2 = Text('In Progress');
-  static const Text taskStatus_cpmpleted1 = Text('Completed');
-  static const Text taskStatus_cpmpleted2 = Text('Completed');
-  static const Text taskStatus_monthly = Text('Monthly');
+  static Text taskStatusTitle = Text('Task Status',textAlign: TextAlign.center,style: TaskyTextStyle.titleHomePageTextStyle);
+  static Text taskStatusComplete = Text('Complete',textAlign: TextAlign.center,style: TaskyTextStyle.text18grayText1400);
+  static Text taskStatusToDo1 = Text('To Do',style: TaskyTextStyle.text14darkBlue400);
+  static Text taskStatusToDo2 = Text('To Do',style: TaskyTextStyle.text16darkBlue500);
+  static Text taskStatusInProgress1 = Text('In Progress',style: TaskyTextStyle.text14darkBlue400);
+  static Text taskStatusInProgress2 = Text('In Progress',style: TaskyTextStyle.text16darkBlue500);
+  static Text taskStatusCompleted1 = Text('Completed',style: TaskyTextStyle.text14darkBlue400);
+  static Text taskStatusCompleted2 = Text('Completed',style: TaskyTextStyle.text16darkBlue500);
+  static Text taskStatusMonthly = Text('Monthly',style: TaskyTextStyle.text18darkBlue600);
 
 //Profile screen
-  static const Text profile_title = Text('Profile',textAlign: TextAlign.center);
-  static const Text profile_edit = Text('Edit',textAlign: TextAlign.center);
-  static const Text profile_onGoing = Text('On Going');
-  static const Text profile_totalComplete = Text('Total Complete');
-  static const Text profile_myprojects = Text('My Projects');
-  static const Text profile_joinTeam = Text('Join a Team');
-  static const Text profile_settings = Text('Settings');
-  static const Text profile_myTask = Text('My Task');
+  static Text profileTitle = Text('Profile',textAlign: TextAlign.center,style: TaskyTextStyle.titleHomePageTextStyle);
+  static Text profileEdit = Text('Edit',textAlign: TextAlign.center,style: TaskyTextStyle.text12darkBlue400);
+  static Text profileOnGoing = Text('On Going',style: TaskyTextStyle.text12grayText1400);
+  static Text profileTotalComplete = Text('Total Complete',style: TaskyTextStyle.text12grayText1400);
+  static Text profileMyProjects = Text('My Projects',style: TaskyTextStyle.text16darkBlue500);
+  static Text profileJoinTeam = Text('Join a Team',style: TaskyTextStyle.text16darkBlue500);
+  static Text profileSettings = Text('Settings',style: TaskyTextStyle.text16darkBlue500);
+  static Text profileMyTask = Text('My Task',style: TaskyTextStyle.text16darkBlue500);
 
 //Side Menu screen
-  static const Text profile_viewProfile = Text('View Profile',textAlign: TextAlign.center);
-  static const Text profile_workspace = Text('Workspace');
-  static const Text profile_invite = Text('Invite',textAlign: TextAlign.center);
-  static const Text profile_manage = Text('Manage');
-  static const Text profile_team = Text('Team');
-  static const Text profile_labels = Text('Labels');
-  static const Text profile_task = Text('Task');
-  static const Text profile_member = Text('Member');
-  static const Text profile_logoutButton = Text('Log Out',textAlign: TextAlign.center);
+  static Text profileViewProfile = Text('View Profile',textAlign: TextAlign.center,style: TaskyTextStyle.text12darkBlue400);
+  static Text profileWorkspace = Text('Workspace',style: TaskyTextStyle.text18darkBlue600);
+  static Text profileInvite = Text('Invite',textAlign: TextAlign.center,style: TaskyTextStyle.text12darkBlue400);
+  static Text profileManage = Text('Manage',style: TaskyTextStyle.text18darkBlue600);
+  static Text profileTeam = Text('Team',style: TaskyTextStyle.text16darkBlue500);
+  static Text profileLabels = Text('Labels',style: TaskyTextStyle.text16darkBlue500);
+  static Text profileTask = Text('Task',style: TaskyTextStyle.text16darkBlue500);
+  static Text profileMember = Text('Member',style: TaskyTextStyle.text16darkBlue500);
+  static Text profileLogoutButton = Text('Log Out',textAlign: TextAlign.center,style: TaskyTextStyle.text14white500);
 
   //Search screen
-  static const Text search_title = Text('Search',textAlign: TextAlign.center);
-  static const Text search_dashboard = Text('Dashboard');
-  static const Text search_tasks = Text('Tasks',textAlign: TextAlign.center);
-  static const Text search_file = Text('File',textAlign: TextAlign.center);
+  static Text searchTitle = Text('Search',textAlign: TextAlign.center,style: TaskyTextStyle.text12darkBlue400);
+  // static Text searchDashboard = Text('Dashboard');
+  // static Text searchTasks = Text('Tasks',textAlign: TextAlign.center);
+  // static Text searchFile = Text('File',textAlign: TextAlign.center);
 
   //Settings screen
-  static const Text settings_title = Text('Settings',textAlign: TextAlign.center);
-  static const Text settings_permission = Text('Permissiom');
-  static const Text settings_pushNotification = Text('Push Notification');
-  static const Text settings_darkMood = Text('Dark Mood');
-  static const Text settings_security = Text('Security');
-  static const Text settings_help = Text('Help');
-  static const Text settings_langauge = Text('Langauge');
-  static const Text settings_aboutApplication = Text('About Application');
+  static Text settingsTitle = Text('Settings',textAlign: TextAlign.center,style: TaskyTextStyle.titleHomePageTextStyle);
+  static Text settingsPermission = Text('Permissiom',style: TaskyTextStyle.text16darkBlue500);
+  static Text settingsPushNotification = Text('Push Notification',style: TaskyTextStyle.text16darkBlue500);
+  static Text settingsDarkMood = Text('Dark Mood',style: TaskyTextStyle.text16darkBlue500);
+  static Text settingsSecurity = Text('Security',style: TaskyTextStyle.text16darkBlue500);
+  static Text settingsHelp = Text('Help',style: TaskyTextStyle.text16darkBlue500);
+  static Text settingsLanguage = Text('Language',style: TaskyTextStyle.text16darkBlue500);
+  static Text settingsAboutApplication = Text('About Application',style: TaskyTextStyle.text16darkBlue500);
 
 //Edit Profile screen
-  static const Text editProfile_title = Text('Edit Profile',textAlign: TextAlign.center);
-  static const Text editProfile_save = Text('Save',textAlign: TextAlign.center);
-  static const Text editProfile_name = Text('Name');
-  static const Text editProfile_email = Text('Email');
-  static const Text editProfile_username = Text('Username');
-  static const Text editProfile_number = Text('Number');
+  static Text editProfileTitle = Text('Edit Profile',textAlign: TextAlign.center,style: TaskyTextStyle.titleHomePageTextStyle);
+  static Text editProfileSave = Text('Save',textAlign: TextAlign.center,style: TaskyTextStyle.text14Orange500);
+  static Text editProfileName = Text('Name',style: TaskyTextStyle.text14grayText1500);
+  static Text editProfileEmail = Text('Email',style: TaskyTextStyle.text14grayText1500);
+  static Text editProfileUsername = Text('Username',style: TaskyTextStyle.text14grayText1500);
+  static Text editProfileNumber = Text('Number',style: TaskyTextStyle.text14grayText1500);
 
 
 //Langauge screen
-  static const Text langauge_title = Text('Langauge',textAlign: TextAlign.center);
-  static const Text langauge_english = Text('English');
-  static const Text langauge_arabic = Text('Arabic');
-  static const Text langauge_spanish = Text('Spanish');
-  static const Text langauge_france = Text('France');
+  static  Text languageTitle = Text('Language',textAlign: TextAlign.center,style: TaskyTextStyle.titleHomePageTextStyle);
+  static  Text languageEnglish = Text('English',style: TaskyTextStyle.text16darkBlue500);
+  static  Text languageArabic = Text('Arabic',style: TaskyTextStyle.text16darkBlue500);
+  static  Text languageSpanish = Text('Spanish',style: TaskyTextStyle.text16darkBlue500);
+  static  Text languageFrance = Text('France',style: TaskyTextStyle.text16darkBlue500);
 }
