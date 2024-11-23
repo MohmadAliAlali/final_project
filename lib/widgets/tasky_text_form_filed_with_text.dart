@@ -65,7 +65,6 @@ class TaskyTextFormFiledWithTextState
         TaskyTextField(
           controller: widget.controller,
           hintText: widget.hintText,
-          text: '',
           color: widget.color,
           errorMessage: widget.errorMessage,
           keyboardType: widget.keyboardType,

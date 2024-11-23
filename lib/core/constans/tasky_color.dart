@@ -17,6 +17,7 @@ class TaskyColor {
   static const Color gray_2 = Color(0xFF868D95);
   static const Color gray3 = Color(0xFFCCCCCC);
   static const Color gray4 = Color(0xFFD7D7D7);
+  static const Color gray5 = Color(0xFFDFDFDF);
   static const Color waiteBG = Color(0xFFF8F7F7);
   static const Color white = Color(0xFFFFFFFF);
   static const Color darkBlue = Color(0xFF002055);

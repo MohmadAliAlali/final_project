@@ -1,4 +1,5 @@
-import 'package:final_project/core/services/media_query_util.dart';
+import 'package:final_project/core/constans/tasky_icons.dart';
+import 'package:final_project/core/services/responsive.dart';
 import 'package:final_project/widgets/tasky_header.dart';
 import 'package:flutter/material.dart';
 
@@ -20,8 +21,8 @@ class TaskcyHomeScreen extends StatelessWidget {
               isButtonText: true,
               isButtonContainer: false,
               istextShow: true,
-              textLeftPadding: 86.p.left,
-              textButtonOrContainerLeftPadding: 91.p.left,
+              textLeftPadding: 86.w,
+              textButtonOrContainerLeftPadding: 91.w
             )
           ],
         ),

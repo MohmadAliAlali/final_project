@@ -1,5 +1,11 @@
-import 'package:final_project/core/services/media_query_util.dart';
+import 'package:final_project/core/constans/tasky_text.dart';
+import 'package:final_project/core/services/navigation.dart';
+import 'package:final_project/core/services/responsive.dart';
+import 'package:final_project/widgets/tasky_button_user_profile.dart';
+import 'package:final_project/widgets/tasky_button_with_swich.dart';
 import 'package:final_project/widgets/tasky_form_field.dart';
+import 'package:final_project/widgets/tasky_header.dart';
+import 'package:final_project/widgets/tasky_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:final_project/core/constans/tasky_color.dart';
 
@@ -19,67 +25,62 @@ class _SettingPageState extends State<SettingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: TaskyColor.white,
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: TaskyColor.black1,
-            size: 18,
+      body:SafeArea(
+        child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          TaskcyHeader(
+            onPressed: (){
+              Navigation.goBack(context);
+            },
+            svgIconOne: TaskcySvg(
+                svgWidth: 20.w,
+                svgHeight: 20.h,
+                TaskcySvgLink: 'assets/icons/back_arrow_ios.svg'),
+            isbuttonTwoShow: false,
+            isButtonText: true,
+            isButtonContainer: false,
+            istextShow: true,
+            screenName: 'Settings',
+            textLeftPadding: 91.w,
           ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        title:  Text(
-          'Settings',
-          style: TextStyle(
-            color: TaskyColor.black1,
-            fontFamily: 'Poppins',
-            fontSize: 18.f,
-            fontWeight: FontWeight.w500,
-            height: 1.0,
-            decoration: TextDecoration.none,
+          SizedBox(height: 40.h),
+          TaskyButtonWithSwitch(
+            onPressed: () {  },
+            text: TaskyText.settingsPermission,
           ),
-        ),
-        centerTitle: true,
-        backgroundColor: TaskyColor.white,
-      ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(height: 40.h),
-              CustomWidgets.buildSwitchField('Permission', _switchLanguage,
-                  (value) {
-                setState(() {
-                  _switchLanguage = value;
-                });
-              }),
-              const SizedBox(height: 20),
-              CustomWidgets.buildSwitchField(
-                  'Push Notification', _switchPermissions, (value) {
-                setState(() {
-                  _switchPermissions = value;
-                });
-              }),
-              const SizedBox(height: 20),
-              CustomWidgets.buildSwitchField('Dark Mode', _switchHelp, (value) {
-                setState(() {
-                  _switchHelp = value;
-                });
-              }),
-              const SizedBox(height: 20),
-              CustomWidgets.buildTextField('Security'),
-              const SizedBox(height: 20),
-              CustomWidgets.buildTextField('Help'),
-              const SizedBox(height: 20),
-              CustomWidgets.buildTextField('Language'),
-              const SizedBox(height: 20),
-              CustomWidgets.buildTextField('About Application'),
-            ],
+          SizedBox(height: 22.h),
+          TaskyButtonWithSwitch(
+            onPressed: () {  },
+            text: TaskyText.settingsPushNotification,
           ),
-        ),
+          SizedBox(height: 22.h),
+          TaskyButtonWithSwitch(
+            onPressed: () {  },
+            text: TaskyText.settingsPushNotification,
+          ),
+          SizedBox(height: 22.h),
+          TaskyButtonUserProfile(
+            onPressed: () {
+            },
+            text:TaskyText.settingsSecurity ,),
+          SizedBox(height: 22.h),
+          TaskyButtonUserProfile(
+            onPressed: () {
+            },
+            text:TaskyText.settingsHelp ,),
+          SizedBox(height: 22.h),
+          TaskyButtonUserProfile(
+            onPressed: () {
+            },
+            text:TaskyText.settingsLanguage ,),
+          SizedBox(height: 22.h),
+          TaskyButtonUserProfile(
+            onPressed: () {
+            },
+            text:TaskyText.settingsAboutApplication ,),
+        ],
+            ),
       ),
     );
   }

@@ -1,8 +1,11 @@
 import 'package:final_project/core/constans/tasky_icons.dart';
 import 'package:final_project/core/constans/tasky_text.dart';
 import 'package:final_project/core/constans/tasky_text_style.dart';
-import 'package:final_project/core/services/media_query_util.dart';
+import 'package:final_project/core/constans/tasky_valid.dart';
 import 'package:final_project/core/services/navigation.dart';
+import 'package:final_project/core/services/responsive.dart';
+import 'package:final_project/view/chat_screen/chat_screen.dart';
+import 'package:final_project/view/langauge_screen/langauge_screen.dart';
 import 'package:final_project/view/settings_screen/settings_screen.dart';
 import 'package:final_project/widgets/tasky_button_user_profile.dart';
 import 'package:final_project/widgets/tasky_button_with_swich.dart';
@@ -39,19 +42,24 @@ class _MyHomePageState extends State<MyHomePage> {
               svgIconOne: TaskyIcons.backArrowIos
             ),
             TaskyButtonUserProfile(onPressed: () {
-              Navigation.navigateTo(context, SettingPage());
+              Navigation.navigateTo(context,const  LangaugeScreen());
             },
               text: TaskyText.profileMyProjects,
               ),
             const SizedBox(height: 20,),
             TaskyButtonWithSwitch(onPressed: () {  },
+              onPressedSwitch: (){
+              Navigation.navigateTo(context, LangaugeScreen());
+              },
               text: TaskyText.settingsPermission,
               ),
-            const SizedBox(height: 20,),
+            const SizedBox(height: 20),
+
             TaskyTextFormFiledWithText(
               controller: _controller,
-              hintText: 'hello',
+              hintText: 'hello world',
               prefixIcon: TaskyIcons.search,
+              width: 200,
               text: TaskyText.createTeamTeamName,),
             TaskyTextFormFiledWithText(
               width: 152,
@@ -61,9 +69,13 @@ class _MyHomePageState extends State<MyHomePage> {
             const SizedBox(height: 20,),
             TaskyContainerState(
               title: TaskyText.taskStatusInProgress2,
-              onPressed: () {  },
+              onPressed: () {
+                Navigation.navigateTo(context, ChatScreen());
+
+              },
               icon: Icons.import_contacts_outlined,
               onPressedMore: () {
+                Navigation.navigateTo(context, ChatScreen());
               },
               description: Text('TaskyText.taskStatusInProgress2',style: TaskyTextStyle.text12grayText1400,)
             )

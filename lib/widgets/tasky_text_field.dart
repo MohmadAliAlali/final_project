@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 class TaskyTextField extends StatefulWidget {
   final TextEditingController controller;
   final String hintText;
-  final String text;
+  // final String text;
   final Color color;
   final TextInputType keyboardType;
   final bool obscureText;
@@ -25,7 +25,7 @@ class TaskyTextField extends StatefulWidget {
     super.key,
     required this.controller,
     required this.hintText,
-    required this.text,
+    // required this.text,
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
     this.prefixIcon,
@@ -80,7 +80,7 @@ class TaskyTextFieldState extends State<TaskyTextField> {
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16.r),
-                  borderSide: BorderSide(color: widget.color),
+                  borderSide: const BorderSide(color: TaskyColor.gray5),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16.r),

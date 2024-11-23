@@ -1,4 +1,4 @@
-import 'package:final_project/core/services/media_query_util.dart';
+import 'package:final_project/core/services/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:final_project/core/constans/tasky_color.dart';
 
