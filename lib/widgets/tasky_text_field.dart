@@ -7,24 +7,25 @@ import 'package:flutter/material.dart';
 class TaskyTextField extends StatefulWidget {
   final TextEditingController controller;
   final String hintText;
-  final String text;
+  // final String text;
   final Color color;
   final TextInputType keyboardType;
   final bool obscureText;
-  final IconData? prefixIcon;
-  final IconData? suffixIcon;
+  final Widget? prefixIcon;
+  final Widget? suffixIcon;
   final String? errorMessage;
   final String? Function(String?)? validator;
   final double pt;
   final double pb;
   final double pl;
   final double pr;
-
+  final double width;
+  final double height;
   const TaskyTextField({
     super.key,
     required this.controller,
     required this.hintText,
-    required this.text,
+    // required this.text,
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
     this.prefixIcon,
@@ -36,6 +37,8 @@ class TaskyTextField extends StatefulWidget {
     this.pl = 0,
     this.pr = 0,
     this.errorMessage,
+    this.width = 327,
+    this.height = 85,
   });
 
   @override
@@ -57,21 +60,19 @@ class TaskyTextFieldState extends State<TaskyTextField> {
       padding: EdgeInsets.only(
           top: widget.pt, left: widget.pl, right: widget.pr, bottom: widget.pb),
           child: SizedBox(
-            height: 100.h,
-            width: 329.0.w,
+            height: widget.height.h,
+            width: widget.width.w,
             child: TextFormField(
               controller: widget.controller,
               keyboardType: widget.keyboardType,
               obscureText: _obscureText,
               validator: widget.validator,
-              style: TaskyTextStyle.text16Black400,
+              style: TaskyTextStyle.text16darkBlue500,
               decoration: InputDecoration(
                 errorText: widget.errorMessage,
-                errorStyle: TaskyTextStyle.text14blueLight400
-                    .copyWith(color: Colors.red),
+                errorStyle: TaskyTextStyle.text14Red500,
                 helperText: ' ',
-                helperStyle: TaskyTextStyle.text14blueLight400
-                    .copyWith(color: Colors.red),
+                helperStyle: TaskyTextStyle.text14Red500,
                 contentPadding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 16.0.h),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16.r),
@@ -79,20 +80,21 @@ class TaskyTextFieldState extends State<TaskyTextField> {
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16.r),
-                  borderSide: BorderSide(color: widget.color),
+                  borderSide: const BorderSide(color: TaskyColor.gray5),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16.r),
                   borderSide: BorderSide(color: widget.color),
                 ),
                 hintText: widget.hintText,
-                hintStyle: TaskyTextStyle.text16Gray400,
-                prefixIcon: widget.prefixIcon != null
-                    ? Icon(widget.prefixIcon, size: 25.0.e)
-                    : null,
+                hintStyle: TaskyTextStyle.text16darkBlue500.copyWith(color: TaskyColor.grayText1,fontWeight: FontWeight.w400),
+                prefixIcon:widget.prefixIcon != null ? Padding(
+                  padding:  EdgeInsets.only(left: 16.0.w ,right: 10.w),
+                  child: widget.prefixIcon,
+                ):null ,
                 prefixIconConstraints:BoxConstraints(
-                  minHeight: 40.h,
-                  minWidth: 40.w,
+                  minHeight: 24.h,
+                  minWidth: 24.w,
                 ),
                 suffixIconConstraints: BoxConstraints(
                   minHeight: 40.h,

@@ -1,4 +1,5 @@
-import 'package:final_project/core/services/media_query_util.dart';
+import 'package:final_project/core/constans/tasky_text_style.dart';
+import 'package:final_project/core/services/responsive.dart';
 import 'package:final_project/widgets/tasky_text.dart';
 import 'package:flutter/material.dart';
 
@@ -13,13 +14,16 @@ class TaskcyHeader extends StatelessWidget {
     this.svgIconTwo,
     this.screenNameNavigator,
     required this.screenName,
-    required this.textLeftPadding,
-    required this.textButtonOrContainerLeftPadding,
+    this.textLeftPadding,
+    this.textButtonOrContainerLeftPadding,
+    this.onPressed,
+    this.onPressedRightIcon,
   });
 
   final Widget? svgIconTwo;
   final Widget? svgIconOne;
-
+  final VoidCallback? onPressed;
+  final VoidCallback? onPressedRightIcon;
   final bool isbuttonTwoShow;
   final bool istextShow;
 
@@ -29,8 +33,8 @@ class TaskcyHeader extends StatelessWidget {
   final Widget? screenNameNavigator;
   final String screenName;
 
-  final double textLeftPadding;
-  final double textButtonOrContainerLeftPadding;
+  final double? textLeftPadding;
+  final double? textButtonOrContainerLeftPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +43,7 @@ class TaskcyHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         InkWell(
-          onTap: () {
-            //navigation Function
-          },
+          onTap: onPressed,
           child: Container(
             margin: EdgeInsets.only(top: 16.p.top, left: 24.p.left),
             width: 42.w,
@@ -53,14 +55,13 @@ class TaskcyHeader extends StatelessWidget {
               shape: BoxShape.circle,
               color: const Color(0xffFFFFFF),
             ),
-            child: svgIconOne,
+            child: Center(child: svgIconOne),
           ),
         ),
         istextShow
-            ? TaskcyText(
-                textStyle:
-                    TextStyle(fontSize: 18.f, fontWeight: FontWeight.w500),
-                topPadding: 28.p.top,
+            ? TaskyText(
+                textStyle: TaskyTextStyle.titleHomePageTextStyle,
+                topPadding: 20.p.top,
                 leftPadding: textLeftPadding,
                 text: screenName,
               )
@@ -68,12 +69,12 @@ class TaskcyHeader extends StatelessWidget {
                 color: const Color(0xffFFFFFF),
               ),
         isbuttonTwoShow && isButtonContainer
-            ? InkWell(
+            ? GestureDetector(
                 onTap: () {},
                 child: Container(
                   margin: EdgeInsets.only(
-                      top: ScreenUtil.screenHeight * 16,
-                      left: textButtonOrContainerLeftPadding),
+                      top:16.h,
+                      left: textButtonOrContainerLeftPadding ?? 0),
                   width: 42.w,
                   height: 42.h,
                   decoration: BoxDecoration(
@@ -89,8 +90,8 @@ class TaskcyHeader extends StatelessWidget {
               )
             : isbuttonTwoShow && isButtonText
                 ? InkWell(
-                    onTap: () {},
-                    child: TaskcyText(
+                    onTap: onPressedRightIcon,
+                    child: TaskyText(
                       textStyle: TextStyle(
                           fontSize: 18.f,
                           fontWeight: FontWeight.w500,

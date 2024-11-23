@@ -1,5 +1,5 @@
-import 'package:final_project/view/home_screen/home_screen.dart';
 import 'package:final_project/view/nav_bar_page.dart';
+import 'package:final_project/view/signup_screen/signup_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'core/services/responsive.dart';
@@ -16,14 +16,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: NavBarPage()
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        debugShowCheckedModeBanner: false,
+        home: const TaskySignUp());
   }
 }
-

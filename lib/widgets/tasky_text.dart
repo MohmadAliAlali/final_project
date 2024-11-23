@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
 
-class TaskcyText extends StatelessWidget {
-  const TaskcyText(
+class TaskyText extends StatelessWidget {
+  const TaskyText(
       {super.key,
       required this.text,
       this.textStyle,
       this.topPadding,
       this.leftPadding,
       this.rightPadding,
-      this.bottomPadding});
+      this.bottomPadding,
+      this.textAlign,
+      this.softWrap});
   final String text;
   final TextStyle? textStyle;
   final double? topPadding;
   final double? leftPadding;
   final double? rightPadding;
   final double? bottomPadding;
+  final TextAlign? textAlign;
+  final bool? softWrap;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +29,8 @@ class TaskcyText extends StatelessWidget {
             right: rightPadding ?? 0,
             bottom: bottomPadding ?? 0),
         child: Text(
+          textAlign: textAlign,
+          softWrap: softWrap,
           text,
           style: textStyle,
         ));

@@ -9,7 +9,7 @@ class TaskyButtonAdd extends StatelessWidget {
   final double height;
   final Color color;
   final SvgPicture icon;
-  final String text;
+  final Text text;
   const TaskyButtonAdd({
     super.key,
     required this.onPressed,
@@ -35,7 +35,7 @@ class TaskyButtonAdd extends StatelessWidget {
           SizedBox(
             width: 12.w,
           ),
-          Text(text)
+          text
         ],
       ),
     );

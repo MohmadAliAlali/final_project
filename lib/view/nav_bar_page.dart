@@ -1,7 +1,9 @@
+import 'package:final_project/core/constans/tasky_color.dart';
 import 'package:final_project/core/constans/tasky_icons.dart';
+import 'package:final_project/core/constans/tasky_text.dart';
 import 'package:final_project/core/services/responsive.dart';
+import 'package:final_project/view/chat_screen/chat_screen.dart';
 import 'package:final_project/view/home_screen/home_screen.dart';
-import 'package:final_project/view/profile_screen/profile_screen.dart';
 import 'package:final_project/widgets/tasky_button_add.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -18,10 +20,10 @@ class _NavBarPageState extends State<NavBarPage> {
 
   final List<Widget> pages = [
     const MyHomePage(),
-    const MyHomePage(),
+    const ChatScreen(),
     const Scaffold(body: Center(child: Text("Wishlist Page"))),
-    const Scaffold(body: Center(child: Text("Cart Page"))),
-    const ProfileScreen(),
+    const ChatScreen(),
+    const Scaffold(body: Center(child: Text("Profile Page"))),
   ];
 
   @override
@@ -49,16 +51,8 @@ class _NavBarPageState extends State<NavBarPage> {
     ];
     return Container(
       height: 82.h,
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black12,
-            blurRadius: 10,
-            spreadRadius: 2,
-          ),
-        ],
-      ),
+      color: Colors.white,
+
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: List.generate(icons.length, (index) {
@@ -111,7 +105,12 @@ class _NavBarPageState extends State<NavBarPage> {
         ),
       ),
       builder: (context) {
-        return Padding(
+        return  Container(
+          decoration: BoxDecoration(
+              color: TaskyColor.white,
+            borderRadius: BorderRadius.only(topLeft:Radius.circular(30.r),topRight: Radius.circular(30.r),)
+          ),
+          child: Padding(
             padding:  EdgeInsets.fromLTRB(24.w,16.0.h,24.w,16.h),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -121,34 +120,34 @@ class _NavBarPageState extends State<NavBarPage> {
                   width: 42.w,
                   margin: EdgeInsets.only(bottom: 30.h),
                   decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(10)),
-                  color: Color(0xffDFDFDF),
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    color: Color(0xffDFDFDF),
 
-                 ),
+                  ),
                 ),
                 TaskyButtonAdd(
                   onPressed: () {  },
-                  text: 'Create Task',
+                  text: TaskyText.addCreateTask,
                   icon: TaskyIcons.editSquareAddScreen,
                 ),
                 SizedBox(height: 20.h,),
                 TaskyButtonAdd(
                   onPressed: () {  },
-                  text: 'Create Project',
+                  text: TaskyText.addCreateProject,
                   icon: TaskyIcons.plusAddScreen,
                 ),
                 SizedBox(height: 20.h,),
 
                 TaskyButtonAdd(
                   onPressed: () {  },
-                  text: 'Create Team',
+                  text: TaskyText.addCreateTeam,
                   icon: TaskyIcons.groupUsers,
                 ),
                 SizedBox(height: 20.h,),
 
                 TaskyButtonAdd(
                   onPressed: () {  },
-                  text: 'Create Event',
+                  text: TaskyText.addCreateEvent,
                   icon: TaskyIcons.timeCircleAddScreen,
                 ),
                 Container(
@@ -158,8 +157,8 @@ class _NavBarPageState extends State<NavBarPage> {
                   margin: EdgeInsets.only(top: 13.h),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.orange,
-                    border: Border.all(color: Color(0xffFFC07B),width: 1.e),
+                    color: TaskyColor.orange,
+                    border: Border.all(color: TaskyColor.lightOrange3,width: 1.e),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withOpacity(0.3),
@@ -173,6 +172,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 ),
               ],
             ),
+          ),
         );
       },
     );
