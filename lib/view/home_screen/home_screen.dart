@@ -13,6 +13,7 @@ import 'package:final_project/widgets/tasky_container_state.dart';
 import 'package:final_project/widgets/tasky_header.dart';
 import 'package:final_project/widgets/tasky_text_form_filed_with_text.dart';
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -66,18 +67,21 @@ class _MyHomePageState extends State<MyHomePage> {
               controller: _controller,
               hintText: 'hello',
               text: TaskyText.createTeamTeamName,),
-            const SizedBox(height: 20,),
-            TaskyContainerState(
-              title: TaskyText.taskStatusInProgress2,
-              onPressed: () {
-                Navigation.navigateTo(context, ChatScreen());
-
-              },
-              icon: Icons.import_contacts_outlined,
-              onPressedMore: () {
-                Navigation.navigateTo(context, ChatScreen());
-              },
-              description: Text('TaskyText.taskStatusInProgress2',style: TaskyTextStyle.text12grayText1400,)
+            // const SizedBox(height: 20,),
+            // TaskyContainerState(
+            //   title: TaskyText.taskStatusInProgress2,
+            //   onPressed: () {
+            //     Navigation.navigateTo(context, ChatScreen());
+            //
+            //   },
+            //   icon: Icons.import_contacts_outlined,
+            //   onPressedMore: () {
+            //     Navigation.navigateTo(context, ChatScreen());
+            //   },
+            //   description: Text('TaskyText.taskStatusInProgress2',style: TaskyTextStyle.text12grayText1400,)
+            // ),
+            CircularPercentIndicator(
+                radius: 80
             )
           ],
         ),
