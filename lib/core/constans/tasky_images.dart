@@ -45,5 +45,5 @@ class TaskyImages {
   static String searchUser4 = 'assets/images/user4.png';
   //profile
   static String profileUser4 = 'assets/images/tasky_images.dart';
-
+  static String Group18060 = 'assets/images/Group 18060.png';
 }

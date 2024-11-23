@@ -29,31 +29,34 @@ class _MyHomePageState extends State<MyHomePage> {
     ScreenUtil.init(context);
     return Scaffold(
       body: Center(
-        child:Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children:<Widget>[
+          children: <Widget>[
             TaskcyHeader(
-              isbuttonTwoShow: true,
-              isButtonText: true,
-              isButtonContainer: true,
-              istextShow: true,
-              screenName: 'title',
-              textLeftPadding: 50.w,
-              textButtonOrContainerLeftPadding: 50.w,
-              svgIconOne: TaskyIcons.backArrowIos
-            ),
-            TaskyButtonUserProfile(onPressed: () {
-              Navigation.navigateTo(context,const  LangaugeScreen());
-            },
+                isbuttonTwoShow: true,
+                isButtonText: true,
+                isButtonContainer: true,
+                istextShow: true,
+                screenName: 'title',
+                textLeftPadding: 50.w,
+                textButtonOrContainerLeftPadding: 50.w,
+                svgIconOne: TaskyIcons.backArrowIos),
+            TaskyButtonUserProfile(
+              onPressed: () {
+                Navigation.navigateTo(context, const LangaugeScreen());
+              },
               text: TaskyText.profileMyProjects,
-              ),
-            const SizedBox(height: 20,),
-            TaskyButtonWithSwitch(onPressed: () {  },
-              onPressedSwitch: (){
-              Navigation.navigateTo(context, LangaugeScreen());
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            TaskyButtonWithSwitch(
+              onPressed: () {},
+              onPressedSwitch: () {
+                Navigation.navigateTo(context, LangaugeScreen());
               },
               text: TaskyText.settingsPermission,
-              ),
+            ),
             const SizedBox(height: 20),
 
             TaskyTextFormFiledWithText(
@@ -61,12 +64,14 @@ class _MyHomePageState extends State<MyHomePage> {
               hintText: 'hello world',
               prefixIcon: TaskyIcons.search,
               width: 200,
-              text: TaskyText.createTeamTeamName,),
+              text: TaskyText.createTeamTeamName,
+            ),
             TaskyTextFormFiledWithText(
               width: 152,
               controller: _controller,
               hintText: 'hello',
-              text: TaskyText.createTeamTeamName,),
+              text: TaskyText.createTeamTeamName,
+            ),
             // const SizedBox(height: 20,),
             // TaskyContainerState(
             //   title: TaskyText.taskStatusInProgress2,
@@ -80,14 +85,10 @@ class _MyHomePageState extends State<MyHomePage> {
             //   },
             //   description: Text('TaskyText.taskStatusInProgress2',style: TaskyTextStyle.text12grayText1400,)
             // ),
-            CircularPercentIndicator(
-                radius: 80
-            )
+            CircularPercentIndicator(radius: 80)
           ],
         ),
       ),
-
     );
   }
 }
-

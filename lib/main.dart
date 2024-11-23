@@ -1,5 +1,8 @@
+
+import 'package:final_project/view/edit_profile_screen/edit_profile_screen.dart';
+import 'package:final_project/view/home_screen/home_screen.dart';
 import 'package:final_project/view/nav_bar_page.dart';
-import 'package:final_project/view/signup_screen/signup_screen.dart';
+import 'package:final_project/view/settings_screen/settings_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'core/services/responsive.dart';
@@ -22,6 +25,6 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        home: const TaskySignUp());
+        home: EditProfileScreen());
   }
 }
