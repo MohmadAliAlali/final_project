@@ -3,7 +3,7 @@ import 'package:final_project/core/constans/tasky_text_style.dart';
 import 'package:final_project/core/services/responsive.dart';
 import 'package:flutter/material.dart';
 
-class TaskyText {
+class TaskyTexts {
   static Text artBoardAppTitle = Text(
     'Tasky',
     textAlign: TextAlign.center,
@@ -84,7 +84,7 @@ class TaskyText {
     'Please enter your email address and password for Login',
     textAlign: TextAlign.left,
     style: TaskyTextStyle.signInSignupInputFieldTextStyle
-        .copyWith(height: 24.h / 14.f,color: TaskyColor.gray_2),
+        .copyWith(height: 24.h / 14.f, color: TaskyColor.gray_2),
   );
   static Text signInEmailPlaceholder = Text(
     'Enter your email',
@@ -132,7 +132,7 @@ class TaskyText {
       'Please Inter your Informatioin and create your account',
       textAlign: TextAlign.left,
       style: TaskyTextStyle.signInSignupInputFieldTextStyle
-          .copyWith(height: 24.h / 14.f,color: TaskyColor.gray_2));
+          .copyWith(height: 24.h / 14.f, color: TaskyColor.gray_2));
   static Text signUpNamePlaceholder = Text('Enter your name',
       style: TaskyTextStyle.signInSignupHintInputFieldTextStyle);
   static Text signUpEmailPlaceholder = Text('Enter your email',

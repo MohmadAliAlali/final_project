@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class TaskcySvg extends StatelessWidget {
-  const TaskcySvg(
+class TaskySvg extends StatelessWidget {
+  const TaskySvg(
       {super.key,
       // ignore: non_constant_identifier_names
-      required this.TaskcySvgLink,
+      required this.TaskySvgLink,
       this.svgWidth,
       this.svgHeight,
       this.svgTopPadding,
@@ -14,7 +14,7 @@ class TaskcySvg extends StatelessWidget {
       this.svgRightPadding,
       this.svgColor});
   // ignore: non_constant_identifier_names
-  final String TaskcySvgLink;
+  final String TaskySvgLink;
   final double? svgWidth;
   final double? svgHeight;
   final double? svgTopPadding;
@@ -31,7 +31,7 @@ class TaskcySvg extends StatelessWidget {
           bottom: svgBottomPadding ?? 0,
           left: svgLeftPadding ?? 0),
       child: SvgPicture.asset(
-        TaskcySvgLink,
+        TaskySvgLink,
         width: svgWidth,
         height: svgHeight,
         // ignore: deprecated_member_use

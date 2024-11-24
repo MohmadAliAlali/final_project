@@ -1,4 +1,3 @@
-import 'package:final_project/core/constans/tasky_text_style.dart';
 import 'package:final_project/core/services/responsive.dart';
 import 'package:final_project/widgets/tasky_text.dart';
 import 'package:flutter/material.dart';
@@ -16,14 +15,12 @@ class TaskcyHeader extends StatelessWidget {
     required this.screenName,
     this.textLeftPadding,
     this.textButtonOrContainerLeftPadding,
-    this.onPressed,
-    this.onPressedRightIcon,
+    required Null Function() onPressed,
   });
 
   final Widget? svgIconTwo;
   final Widget? svgIconOne;
-  final VoidCallback? onPressed;
-  final VoidCallback? onPressedRightIcon;
+
   final bool isbuttonTwoShow;
   final bool istextShow;
 
@@ -43,7 +40,7 @@ class TaskcyHeader extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         InkWell(
-          onTap: onPressed,
+          onTap: () {},
           child: Container(
             margin: EdgeInsets.only(top: 16.p.top, left: 24.p.left),
             width: 42.w,
@@ -60,8 +57,9 @@ class TaskcyHeader extends StatelessWidget {
         ),
         istextShow
             ? TaskyText(
-                textStyle: TaskyTextStyle.titleHomePageTextStyle,
-                topPadding: 20.p.top,
+                textStyle:
+                    TextStyle(fontSize: 18.f, fontWeight: FontWeight.w500),
+                topPadding: 28.p.top,
                 leftPadding: textLeftPadding,
                 text: screenName,
               )
@@ -69,11 +67,11 @@ class TaskcyHeader extends StatelessWidget {
                 color: const Color(0xffFFFFFF),
               ),
         isbuttonTwoShow && isButtonContainer
-            ? GestureDetector(
+            ? InkWell(
                 onTap: () {},
                 child: Container(
                   margin: EdgeInsets.only(
-                      top:16.h,
+                      top: ScreenUtil.screenHeight * 16,
                       left: textButtonOrContainerLeftPadding ?? 0),
                   width: 42.w,
                   height: 42.h,
@@ -90,7 +88,7 @@ class TaskcyHeader extends StatelessWidget {
               )
             : isbuttonTwoShow && isButtonText
                 ? InkWell(
-                    onTap: onPressedRightIcon,
+                    onTap: () {},
                     child: TaskyText(
                       textStyle: TextStyle(
                           fontSize: 18.f,

@@ -1,5 +1,4 @@
 import 'package:final_project/core/constans/tasky_text_style.dart';
-import 'package:final_project/core/services/responsive.dart';
 import 'package:final_project/widgets/tasky_text.dart';
 import 'package:flutter/material.dart';
 
@@ -29,9 +28,8 @@ class AuthenticationNavigatorText extends StatelessWidget {
           padding:
               EdgeInsets.only(top: topPadding ?? 0, left: leftPadding ?? 0),
           child: TaskyText(
-            text: authNavigatorOptionText,
-            textStyle: TaskyTextStyle.text14grayText1500
-          ),
+              text: authNavigatorOptionText,
+              textStyle: TaskyTextStyle.text14grayText1500),
         ),
         Padding(
           padding: EdgeInsets.only(
@@ -44,10 +42,8 @@ class AuthenticationNavigatorText extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => targetPage),
               );
             },
-            child: Text(
-              authNavigatorGoTo,
-              style:TaskyTextStyle.text14Orange500
-            ),
+            child:
+                Text(authNavigatorGoTo, style: TaskyTextStyle.text14Orange500),
           ),
         )
       ],

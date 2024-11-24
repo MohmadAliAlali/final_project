@@ -1,13 +1,15 @@
 import 'package:final_project/controller/authentication_controller/signin_controller/sign_in_authentication_controller.dart';
 import 'package:final_project/core/constans/const_data.dart';
 import 'package:final_project/core/constans/tasky_color.dart';
+import 'package:final_project/core/constans/tasky_icons.dart';
 import 'package:final_project/core/constans/tasky_text.dart';
 import 'package:final_project/core/constans/tasky_text_style.dart';
+import 'package:final_project/core/services/navigation.dart';
 import 'package:final_project/core/services/responsive.dart';
-import 'package:final_project/view/signup_screen/signup_screen.dart';
+import 'package:final_project/view/screens/authentication/signup/signup_screen/signup_screen.dart';
 import 'package:final_project/widgets/authentication_navigator_text.dart';
 import 'package:final_project/widgets/authentication_validation_button.dart';
-import 'package:final_project/widgets/authintication_with_google_and_apple.dart';
+import 'package:final_project/widgets/authentication_with_google_and_apple.dart';
 import 'package:final_project/widgets/sigin_input_data.dart';
 import 'package:final_project/widgets/tasky_header.dart';
 import 'package:final_project/widgets/tasky_svg.dart';
@@ -39,10 +41,10 @@ class _TaskySiginState extends State<TaskySigin> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TaskcyHeader(
-                svgIconOne: TaskcySvg(
-                    svgWidth: 20.w,
-                    svgHeight: 20.h,
-                    TaskcySvgLink: 'assets/icons/back_arrow_ios.svg'),
+                onPressed: () {
+                  Navigation.navigateTo(context, const TaskySignUp());
+                },
+                svgIconOne: TaskyIcons.backArrowIos,
                 isbuttonTwoShow: false,
                 isButtonText: true,
                 isButtonContainer: false,
@@ -51,15 +53,15 @@ class _TaskySiginState extends State<TaskySigin> {
                 textLeftPadding: 91.w,
               ),
               Padding(
-                padding: EdgeInsets.only(top: 40.h,left: 24.w),
-                child: TaskyText.signInWelcomeBack,
+                padding: EdgeInsets.only(top: 40.h, left: 24.w),
+                child: TaskyTexts.signInWelcomeBack,
               ),
               Padding(
-                padding: EdgeInsets.only(top: 12.h,left: 24.w),
+                padding: EdgeInsets.only(top: 12.h, left: 24.w),
                 child: SizedBox(
                   width: 249.w,
                   height: 49.h,
-                  child: TaskyText.signInSubtitle1,
+                  child: TaskyTexts.signInSubtitle1,
                 ),
               ),
               const SiginInputData(),
@@ -70,17 +72,17 @@ class _TaskySiginState extends State<TaskySigin> {
                   child: Text(
                     'Forgot Password?',
                     style: TaskyTextStyle.text14darkBlue500,
+                  ),
                 ),
-              ),
               ),
               AuthenticationValidationButton(
                   authFunction: () => signInAuth(context),
                   topPadding: 30.h,
                   buttonText: 'Sign In'),
-              AuthinticationWithGoogleAndApple(
+              AuthenticationWithGoogleAndApple(
                 textLeftPadding: 149.w,
                 textTopPadding: 60.h,
-                text: TaskyText.signInWith,
+                text: TaskyTexts.signInWith,
               ),
               AuthenticationNavigatorText(
                   targetPage: const TaskySignUp(),

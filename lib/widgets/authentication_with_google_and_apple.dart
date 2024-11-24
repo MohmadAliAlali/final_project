@@ -4,8 +4,8 @@ import 'package:final_project/core/constans/tasky_text.dart';
 import 'package:final_project/core/services/responsive.dart';
 import 'package:flutter/material.dart';
 
-class AuthinticationWithGoogleAndApple extends StatelessWidget {
-  const AuthinticationWithGoogleAndApple(
+class AuthenticationWithGoogleAndApple extends StatelessWidget {
+  const AuthenticationWithGoogleAndApple(
       {super.key,
       required this.text,
       this.textTopPadding,
@@ -21,7 +21,9 @@ class AuthinticationWithGoogleAndApple extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: textTopPadding!.h,),
+        SizedBox(
+          height: textTopPadding!.h,
+        ),
         Center(
           child: text,
         ),
@@ -43,8 +45,7 @@ class AuthinticationWithGoogleAndApple extends StatelessWidget {
                   ),
                 ),
                 child: Center(
-                  child:TaskyIcons.appleIcon,
-
+                  child: TaskyIcons.appleIcon,
                 ),
               ),
             ),

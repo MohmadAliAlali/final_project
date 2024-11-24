@@ -2,11 +2,12 @@ import 'package:final_project/controller/authentication_controller/signup_contro
 import 'package:final_project/core/constans/const_data.dart';
 import 'package:final_project/core/constans/tasky_color.dart';
 import 'package:final_project/core/constans/tasky_text.dart';
+import 'package:final_project/core/services/navigation.dart';
 import 'package:final_project/core/services/responsive.dart';
-import 'package:final_project/view/signin_screen/signin_screen.dart';
+import 'package:final_project/view/screens/authentication/signin_screen/signin_screen.dart';
 import 'package:final_project/widgets/authentication_navigator_text.dart';
 import 'package:final_project/widgets/authentication_validation_button.dart';
-import 'package:final_project/widgets/authintication_with_google_and_apple.dart';
+import 'package:final_project/widgets/authentication_with_google_and_apple.dart';
 import 'package:final_project/widgets/signup_input_data.dart';
 import 'package:final_project/widgets/tasky_header.dart';
 import 'package:final_project/widgets/tasky_svg.dart';
@@ -46,10 +47,13 @@ class _TaskySignUpState extends State<TaskySignUp> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TaskcyHeader(
-                svgIconOne: TaskcySvg(
+                onPressed: () {
+                  Navigation.navigateTo(context, const TaskySigin());
+                },
+                svgIconOne: TaskySvg(
                     svgWidth: 20.w,
                     svgHeight: 20.h,
-                    TaskcySvgLink: 'assets/icons/back_arrow_ios.svg'),
+                    TaskySvgLink: 'assets/icons/back_arrow_ios.svg'),
                 isbuttonTwoShow: false,
                 isButtonText: true,
                 isButtonContainer: false,
@@ -58,27 +62,26 @@ class _TaskySignUpState extends State<TaskySignUp> {
                 textLeftPadding: 88.p.left,
               ),
               Padding(
-                padding: EdgeInsets.only(top: 40.h,left: 24.w),
-                child: TaskyText.signUpWelcomeBack,
+                padding: EdgeInsets.only(top: 40.h, left: 24.w),
+                child: TaskyTexts.signUpWelcomeBack,
               ),
               Padding(
-                padding: EdgeInsets.only(top: 12.h,left: 24.w),
+                padding: EdgeInsets.only(top: 12.h, left: 24.w),
                 child: SizedBox(
                   width: 249.w,
                   height: 49.h,
-                  child: TaskyText.signUpSubtitle1,
+                  child: TaskyTexts.signUpSubtitle1,
                 ),
               ),
-
               const SignupInputData(),
               AuthenticationValidationButton(
                   authFunction: () => signUpAuth(context),
                   topPadding: 30.h,
                   buttonText: 'Sign Up'),
-              AuthinticationWithGoogleAndApple(
+              AuthenticationWithGoogleAndApple(
                 textLeftPadding: 149.w,
                 textTopPadding: 40.h,
-                text: TaskyText.signUpWith,
+                text: TaskyTexts.signUpWith,
               ),
               AuthenticationNavigatorText(
                   targetPage: const TaskySigin(),
