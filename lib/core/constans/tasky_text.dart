@@ -84,7 +84,7 @@ class TaskyText {
     'Please enter your email address and password for Login',
     textAlign: TextAlign.left,
     style: TaskyTextStyle.signInSignupInputFieldTextStyle
-        .copyWith(height: 24.h / 14.f,color: TaskyColor.gray_2),
+        .copyWith(height: 24.h / 14.f, color: TaskyColor.gray_2),
   );
   static Text signInEmailPlaceholder = Text(
     'Enter your email',
@@ -132,7 +132,7 @@ class TaskyText {
       'Please Inter your Informatioin and create your account',
       textAlign: TextAlign.left,
       style: TaskyTextStyle.signInSignupInputFieldTextStyle
-          .copyWith(height: 24.h / 14.f,color: TaskyColor.gray_2));
+          .copyWith(height: 24.h / 14.f, color: TaskyColor.gray_2));
   static Text signUpNamePlaceholder = Text('Enter your name',
       style: TaskyTextStyle.signInSignupHintInputFieldTextStyle);
   static Text signUpEmailPlaceholder = Text('Enter your email',
@@ -278,18 +278,18 @@ class TaskyText {
   static Text taskStatusTitle = Text('Task Status',
       textAlign: TextAlign.center,
       style: TaskyTextStyle.titleHomePageTextStyle);
-  static Text taskStatusComplete = Text('Complete',
+  static Text taskStatusComplete = Text(' completed',
       textAlign: TextAlign.center, style: TaskyTextStyle.text18grayText1400);
   static Text taskStatusToDo1 =
-      Text('To Do', style: TaskyTextStyle.text14darkBlue400);
+      Text('2 Task now 1 Upcoming', style: TaskyTextStyle.text14darkBlue400);
   static Text taskStatusToDo2 =
       Text('To Do', style: TaskyTextStyle.text16darkBlue500);
   static Text taskStatusInProgress1 =
-      Text('In Progress', style: TaskyTextStyle.text14darkBlue400);
+      Text('2Task now 1 started', style: TaskyTextStyle.text14darkBlue400);
   static Text taskStatusInProgress2 =
       Text('In Progress', style: TaskyTextStyle.text16darkBlue500);
-  static Text taskStatusCompleted1 =
-      Text('Completed', style: TaskyTextStyle.text14darkBlue400);
+  static Text taskStatusCompleted1 = Text('18 Task now  18 Task completed',
+      style: TaskyTextStyle.text14darkBlue400);
   static Text taskStatusCompleted2 =
       Text('Completed', style: TaskyTextStyle.text16darkBlue500);
   static Text taskStatusMonthly =

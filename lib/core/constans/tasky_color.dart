@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 
 class TaskyColor {
-
-
-
-
-
   static const Color black1 = Color(0xFF000000);
   static const Color black2 = Color(0xFF030A0B);
   static const Color gray0 = Color(0xFF282828);
@@ -33,4 +28,5 @@ class TaskyColor {
   static const Color lightOrange3 = Color(0xFFFFC07B);
   static const Color green = Color(0xFFB1D199);
   static const Color lightGreen = Color(0xFFB2D29D);
+  static const Color purple2 = Color(0xFf756EF3);
 }

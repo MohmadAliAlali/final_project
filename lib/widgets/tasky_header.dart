@@ -73,8 +73,7 @@ class TaskcyHeader extends StatelessWidget {
                 onTap: () {},
                 child: Container(
                   margin: EdgeInsets.only(
-                      top:16.h,
-                      left: textButtonOrContainerLeftPadding ?? 0),
+                      top: 16.h, left: textButtonOrContainerLeftPadding ?? 0),
                   width: 42.w,
                   height: 42.h,
                   decoration: BoxDecoration(
