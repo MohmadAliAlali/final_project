@@ -1,14 +1,15 @@
 import 'package:final_project/core/constans/tasky_color.dart';
 import 'package:final_project/core/constans/tasky_icons.dart';
 import 'package:final_project/core/constans/tasky_images.dart';
-import 'package:final_project/core/constans/tasky_text_style.dart';
+//import 'package:final_project/core/constans/tasky_text_style.dart';
 import 'package:final_project/core/services/responsive.dart';
 import 'package:final_project/widgets/tasky_app_custom_list_view_separated.dart';
 import 'package:final_project/widgets/tasky_header.dart';
 import 'package:final_project/widgets/tasky_svg.dart';
 import 'package:final_project/widgets/tasky_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
+//import 'package:flutter_svg/flutter_svg.dart';
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
 
@@ -53,9 +54,9 @@ class _ChatScreenState extends State<ChatScreen> {
                   svgHeight: 20.h,
                   TaskcySvgLink: 'assets/icons/back_arrow_ios.svg'),
               svgIconTwo: TaskcySvg(
-                  svgWidth: 20.w,
-                  svgHeight: 20.h,
-                  TaskcySvgLink: 'assets/icons/add.svg',
+                svgWidth: 20.w,
+                svgHeight: 20.h,
+                TaskcySvgLink: 'assets/icons/add.svg',
                 svgColor: TaskyColor.darkBlue,
               ),
               isbuttonTwoShow: true,
@@ -65,10 +66,9 @@ class _ChatScreenState extends State<ChatScreen> {
               screenName: 'Chat',
               textLeftPadding: 104.w,
               textButtonOrContainerLeftPadding: 104.w,
-
             ),
             Padding(
-              padding:  EdgeInsets.only(top: 40.0.h),
+              padding: EdgeInsets.only(top: 40.0.h),
               child: TaskyTextField(
                 height: 80,
                 controller: _searchController,

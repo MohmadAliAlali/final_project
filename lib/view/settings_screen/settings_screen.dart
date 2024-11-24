@@ -25,62 +25,62 @@ class _SettingPageState extends State<SettingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: TaskyColor.white,
-      body:SafeArea(
+      body: SafeArea(
         child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          TaskcyHeader(
-            onPressed: (){
-              Navigation.goBack(context);
-            },
-            svgIconOne: TaskcySvg(
-                svgWidth: 20.w,
-                svgHeight: 20.h,
-                TaskcySvgLink: 'assets/icons/back_arrow_ios.svg'),
-            isbuttonTwoShow: false,
-            isButtonText: true,
-            isButtonContainer: false,
-            istextShow: true,
-            screenName: 'Settings',
-            textLeftPadding: 91.w,
-          ),
-          SizedBox(height: 40.h),
-          TaskyButtonWithSwitch(
-            onPressed: () {  },
-            text: TaskyText.settingsPermission,
-          ),
-          SizedBox(height: 22.h),
-          TaskyButtonWithSwitch(
-            onPressed: () {  },
-            text: TaskyText.settingsPushNotification,
-          ),
-          SizedBox(height: 22.h),
-          TaskyButtonWithSwitch(
-            onPressed: () {  },
-            text: TaskyText.settingsPushNotification,
-          ),
-          SizedBox(height: 22.h),
-          TaskyButtonUserProfile(
-            onPressed: () {
-            },
-            text:TaskyText.settingsSecurity ,),
-          SizedBox(height: 22.h),
-          TaskyButtonUserProfile(
-            onPressed: () {
-            },
-            text:TaskyText.settingsHelp ,),
-          SizedBox(height: 22.h),
-          TaskyButtonUserProfile(
-            onPressed: () {
-            },
-            text:TaskyText.settingsLanguage ,),
-          SizedBox(height: 22.h),
-          TaskyButtonUserProfile(
-            onPressed: () {
-            },
-            text:TaskyText.settingsAboutApplication ,),
-        ],
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            TaskcyHeader(
+              onPressed: () {
+                Navigation.goBack(context);
+              },
+              svgIconOne: TaskcySvg(
+                  svgWidth: 20.w,
+                  svgHeight: 20.h,
+                  TaskcySvgLink: 'assets/icons/back_arrow_ios.svg'),
+              isbuttonTwoShow: false,
+              isButtonText: true,
+              isButtonContainer: false,
+              istextShow: true,
+              screenName: 'Settings',
+              textLeftPadding: 91.w,
             ),
+            SizedBox(height: 40.h),
+            TaskyButtonWithSwitch(
+              onPressed: () {},
+              text: TaskyText.settingsPermission,
+            ),
+            SizedBox(height: 22.h),
+            TaskyButtonWithSwitch(
+              onPressed: () {},
+              text: TaskyText.settingsPushNotification,
+            ),
+            SizedBox(height: 22.h),
+            TaskyButtonWithSwitch(
+              onPressed: () {},
+              text: TaskyText.settingsPushNotification,
+            ),
+            SizedBox(height: 22.h),
+            TaskyButtonUserProfile(
+              onPressed: () {},
+              text: TaskyText.settingsSecurity,
+            ),
+            SizedBox(height: 22.h),
+            TaskyButtonUserProfile(
+              onPressed: () {},
+              text: TaskyText.settingsHelp,
+            ),
+            SizedBox(height: 22.h),
+            TaskyButtonUserProfile(
+              onPressed: () {},
+              text: TaskyText.settingsLanguage,
+            ),
+            SizedBox(height: 22.h),
+            TaskyButtonUserProfile(
+              onPressed: () {},
+              text: TaskyText.settingsAboutApplication,
+            ),
+          ],
+        ),
       ),
     );
   }

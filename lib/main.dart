@@ -1,5 +1,6 @@
-import 'package:final_project/view/nav_bar_page.dart';
 import 'package:final_project/view/signup_screen/signup_screen.dart';
+import 'package:final_project/view/create_team_screen/create_team_screen.dart';
+import 'package:final_project/view/monthly_screen/monthly_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'core/services/responsive.dart';
