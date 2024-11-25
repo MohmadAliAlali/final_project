@@ -1,3 +1,4 @@
+import 'package:final_project/view/monthly_task_screen/monthly_task_screen.dart';
 import 'package:final_project/view/signup_screen/signup_screen.dart';
 import 'package:final_project/view/create_team_screen/create_team_screen.dart';
 import 'package:final_project/view/monthly_screen/monthly_screen.dart';
@@ -23,6 +24,6 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         debugShowCheckedModeBanner: false,
-        home: const TaskySignUp());
+        home: MonthlyTaskScreen());
   }
 }
