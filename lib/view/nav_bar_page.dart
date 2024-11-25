@@ -1,6 +1,6 @@
-import 'package:final_project/core/constans/tasky_color.dart';
-import 'package:final_project/core/constans/tasky_icons.dart';
-import 'package:final_project/core/constans/tasky_text.dart';
+import 'package:final_project/core/constants/tasky_color.dart';
+import 'package:final_project/core/constants/tasky_icons.dart';
+import 'package:final_project/core/constants/tasky_text.dart';
 import 'package:final_project/core/services/responsive.dart';
 import 'package:final_project/view/chat_screen/chat_screen.dart';
 import 'package:final_project/view/home_screen/home_screen.dart';

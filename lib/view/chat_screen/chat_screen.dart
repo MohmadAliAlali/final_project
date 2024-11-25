@@ -1,8 +1,10 @@
-import 'package:final_project/core/constans/tasky_color.dart';
-import 'package:final_project/core/constans/tasky_icons.dart';
-import 'package:final_project/core/constans/tasky_images.dart';
-import 'package:final_project/core/constans/tasky_text_style.dart';
+import 'package:final_project/core/constants/tasky_color.dart';
+import 'package:final_project/core/constants/tasky_icons.dart';
+import 'package:final_project/core/constants/tasky_images.dart';
+import 'package:final_project/core/constants/tasky_text_style.dart';
+import 'package:final_project/core/services/navigation.dart';
 import 'package:final_project/core/services/responsive.dart';
+import 'package:final_project/view/edit_profile_screen/edit_profile_screen.dart';
 import 'package:final_project/widgets/tasky_app_custom_list_view_separated.dart';
 import 'package:final_project/widgets/tasky_header.dart';
 import 'package:final_project/widgets/tasky_svg.dart';
@@ -65,7 +67,10 @@ class _ChatScreenState extends State<ChatScreen> {
               screenName: 'Chat',
               textLeftPadding: 104.w,
               textButtonOrContainerLeftPadding: 104.w,
-
+                onPressed: (){
+                print('object');
+                Navigation.navigateTo(context,const EditProfileScreen());
+                },
             ),
             Padding(
               padding:  EdgeInsets.only(top: 40.0.h),

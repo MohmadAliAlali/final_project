@@ -1,7 +1,8 @@
 import 'package:final_project/controller/authentication_controller/signup_controller/sign_up_auth_controller.dart';
-import 'package:final_project/core/constans/const_data.dart';
-import 'package:final_project/core/constans/tasky_color.dart';
-import 'package:final_project/core/constans/tasky_text.dart';
+import 'package:final_project/core/constants/const_data.dart';
+import 'package:final_project/core/constants/tasky_color.dart';
+import 'package:final_project/core/constants/tasky_text.dart';
+import 'package:final_project/core/services/navigation.dart';
 import 'package:final_project/core/services/responsive.dart';
 import 'package:final_project/view/signin_screen/signin_screen.dart';
 import 'package:final_project/widgets/authentication_navigator_text.dart';
@@ -20,6 +21,8 @@ class TaskySignUp extends StatefulWidget {
 }
 
 class _TaskySignUpState extends State<TaskySignUp> {
+  final GlobalKey<FormState> _signUpGlobalKey = GlobalKey<FormState>();
+
   @override
   void dispose() {
     ConstData.signUpEmailController.dispose();
@@ -30,7 +33,7 @@ class _TaskySignUpState extends State<TaskySignUp> {
 
   void signUpAuth(BuildContext context) {
     SignUpAuthController.signUpAuth(
-      ConstData.signUpGlobalKey,
+      _signUpGlobalKey,
       context,
     );
   }
@@ -56,6 +59,8 @@ class _TaskySignUpState extends State<TaskySignUp> {
                 istextShow: true,
                 screenName: 'Sign Up',
                 textLeftPadding: 88.p.left,
+                onPressed: ()=>Navigation.goBack(context),
+
               ),
               Padding(
                 padding: EdgeInsets.only(top: 40.h,left: 24.w),
@@ -70,7 +75,7 @@ class _TaskySignUpState extends State<TaskySignUp> {
                 ),
               ),
 
-              const SignupInputData(),
+              SignupInputData(globalKey:_signUpGlobalKey ,),
               AuthenticationValidationButton(
                   authFunction: () => signUpAuth(context),
                   topPadding: 30.h,

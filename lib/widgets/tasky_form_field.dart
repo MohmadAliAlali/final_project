@@ -1,6 +1,6 @@
-import 'package:final_project/core/constans/tasky_text_style.dart';
+import 'package:final_project/core/constants/tasky_text_style.dart';
 import 'package:flutter/material.dart';
-import 'package:final_project/core/constans/tasky_color.dart';
+import 'package:final_project/core/constants/tasky_color.dart';
 
 class CustomWidgets {
   static Widget buildSwitchField(

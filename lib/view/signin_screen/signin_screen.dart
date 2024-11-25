@@ -1,9 +1,7 @@
 import 'package:final_project/controller/authentication_controller/signin_controller/sign_in_authentication_controller.dart';
-import 'package:final_project/core/constans/const_data.dart';
-import 'package:final_project/core/constans/tasky_color.dart';
-import 'package:final_project/core/constans/tasky_text.dart';
-import 'package:final_project/core/constans/tasky_text_style.dart';
-import 'package:final_project/core/services/responsive.dart';
+import 'package:final_project/core/services/navigation.dart';
+import 'package:final_project/exports/exports.dart';
+import 'package:final_project/core/constants/tasky_text.dart';
 import 'package:final_project/view/signup_screen/signup_screen.dart';
 import 'package:final_project/widgets/authentication_navigator_text.dart';
 import 'package:final_project/widgets/authentication_validation_button.dart';
@@ -11,8 +9,6 @@ import 'package:final_project/widgets/authintication_with_google_and_apple.dart'
 import 'package:final_project/widgets/sigin_input_data.dart';
 import 'package:final_project/widgets/tasky_header.dart';
 import 'package:final_project/widgets/tasky_svg.dart';
-import 'package:flutter/material.dart';
-
 class TaskySigin extends StatefulWidget {
   const TaskySigin({super.key});
 
@@ -21,9 +17,11 @@ class TaskySigin extends StatefulWidget {
 }
 
 class _TaskySiginState extends State<TaskySigin> {
+  final GlobalKey<FormState> _signInGlobalKey = GlobalKey<FormState>();
+
   void signInAuth(BuildContext context) {
     SignInAuthenticationController.signInAuth(
-      ConstData.signInGlobalKey,
+      _signInGlobalKey,
       context,
     );
   }
@@ -49,6 +47,7 @@ class _TaskySiginState extends State<TaskySigin> {
                 istextShow: true,
                 screenName: 'Sign In',
                 textLeftPadding: 91.w,
+                onPressed: ()=>Navigation.goBack(context),
               ),
               Padding(
                 padding: EdgeInsets.only(top: 40.h,left: 24.w),
@@ -62,7 +61,7 @@ class _TaskySiginState extends State<TaskySigin> {
                   child: TaskyText.signInSubtitle1,
                 ),
               ),
-              const SiginInputData(),
+              SiginInputData( globalKey: _signInGlobalKey,),
               Padding(
                 padding: EdgeInsets.only(top: 0.h, left: 226.w),
                 child: GestureDetector(

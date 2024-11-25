@@ -31,6 +31,7 @@ class TaskyColor {
   static const Color lightOrange = Color(0xFFFFE1AC);
   static const Color lightOrange2 = Color(0xFFFFD5A7);
   static const Color lightOrange3 = Color(0xFFFFC07B);
+  static const Color lightOrange4 = Color(0x35850036);
   static const Color green = Color(0xFFB1D199);
   static const Color lightGreen = Color(0xFFB2D29D);
 }

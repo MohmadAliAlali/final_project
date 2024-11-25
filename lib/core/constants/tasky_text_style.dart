@@ -1,10 +1,10 @@
 import 'package:final_project/core/services/responsive.dart';
 import 'package:flutter/material.dart';
-import 'package:final_project/core/constans/tasky_color.dart';
+import 'package:final_project/core/constants/tasky_color.dart';
 
 class TaskyTextStyle {
   static TextStyle nameApp =  TextStyle(
-    fontFamily: 'PollerOne-Regular',
+    fontFamily: 'pollerOne',
     fontSize: 46.f,
     fontWeight: FontWeight.w400,
     color: TaskyColor.orange,
@@ -29,6 +29,7 @@ class TaskyTextStyle {
   );
   static TextStyle taskManagementTextStyle = TextStyle(
     fontFamily: 'Poppins',
+    height: 18.h/18.f,
     fontSize: 18.f,
     fontWeight: FontWeight.w500,
     color: TaskyColor.orange,
@@ -36,12 +37,14 @@ class TaskyTextStyle {
 
   static TextStyle threeOnboardingTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
+    height: 45.h/35.f,
     fontSize: 35.f,
     fontWeight: FontWeight.w400,
     color: TaskyColor.gray0,
   );
   static TextStyle differentOrangeWordsTextStyle = TextStyle(
     fontFamily: 'Poppins-Bold',
+    height: 45.h/35.f,
     fontSize: 35.f,
     fontWeight: FontWeight.w600,
     color: TaskyColor.orange,
@@ -49,7 +52,7 @@ class TaskyTextStyle {
   static TextStyle skipOnboardingTextStyle = TextStyle(
     fontFamily: 'Poppins-Regular',
     fontSize: 14.f,
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w400,
     color: TaskyColor.gray0,
   );
 

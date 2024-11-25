@@ -1,13 +1,12 @@
-import 'package:final_project/core/constans/const_data.dart';
+import 'package:final_project/core/constants/const_data.dart';
 import 'package:final_project/core/services/navigation.dart';
 import 'package:final_project/view/nav_bar_page.dart';
 import 'package:flutter/material.dart';
 
 class SignUpAuthController {
-  static void signUpAuth(
-      GlobalKey<FormState> signUpGlobalKey, BuildContext context) {
+  static void signUpAuth(GlobalKey<FormState> signInGlobalKey, BuildContext context) {
     try {
-      if (signUpGlobalKey.currentState!.validate()) {
+      if (signInGlobalKey.currentState!.validate()) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             backgroundColor: Colors.green,

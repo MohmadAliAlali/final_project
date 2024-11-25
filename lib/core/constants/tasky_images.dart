@@ -1,8 +1,18 @@
 class TaskyImages {
   //onboard _1
-  static String focalText = 'assets/images/focal text.png';
+  static String focalTextSvg = 'assets/images/focal_text.svg';
   static String circle = 'assets/images/Circle.png';
-  static String circle2 = 'assets/images/Circle2.png';
+  static String circleTextSvg = 'assets/images/circle_welcome_first.svg';
+static String circle2 = 'assets/images/Circle2.png';
+  static String nextButton = 'assets/images/Next Button.svg';
+  // screen 1 onboard
+  static String on1userChat1 = 'assets/images/Image 1.png';
+  static String on1userChat2 = 'assets/images/Image 2.png';
+  static String on1userChat3 = 'assets/images/Image 3.png';
+  static String onBoard1 = 'assets/images/Onboard 6.png';
+  static String onBoard2 = 'assets/images/Onboard 4.png';
+  static String onBoard3 = 'assets/images/Onboard 5.png';
+  // static String circle2 = 'assets/images/Circle2.png';
   static String man_1 = 'assets/images/man_1.png';
   static String man_2 = 'assets/images/man_2.png';
   static String imageBox1 = 'assets/images/image box 1.png';
@@ -45,5 +55,7 @@ class TaskyImages {
   static String searchUser4 = 'assets/images/user4.png';
   //profile
   static String profileUser4 = 'assets/images/tasky_images.dart';
+  static String Group18060 = 'assets/images/Group 18060.png';
+  static String userProfileEdit = 'assets/images/Profile Photo.png';
 
 }

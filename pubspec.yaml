@@ -89,6 +89,10 @@ flutter:
         - asset: assets/fonts/Poppins-Medium.ttf
         - asset: assets/fonts/Poppins-Regular.ttf
         - asset: assets/fonts/Poppins-Thin.ttf
+    - family: pollerOne
+      fonts:
+        - asset: assets/fonts/Poller_One/PollerOne-Regular.ttf
+
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf

@@ -1,5 +1,5 @@
-import 'package:final_project/core/constans/tasky_color.dart';
-import 'package:final_project/core/constans/tasky_text_style.dart';
+import 'package:final_project/core/constants/tasky_color.dart';
+import 'package:final_project/core/constants/tasky_text_style.dart';
 import 'package:final_project/core/services/responsive.dart';
 import 'package:flutter/material.dart';
 
@@ -67,6 +67,7 @@ class TaskyTextFieldState extends State<TaskyTextField> {
               keyboardType: widget.keyboardType,
               obscureText: _obscureText,
               validator: widget.validator,
+              cursorColor: widget.color,
               style: TaskyTextStyle.text16darkBlue500,
               decoration: InputDecoration(
                 errorText: widget.errorMessage,

@@ -1,8 +1,8 @@
 import 'package:final_project/widgets/tasky_header.dart';
 import 'package:final_project/widgets/tasky_svg.dart';
 import 'package:flutter/material.dart';
-import 'package:final_project/core/constans/tasky_color.dart';
-import 'package:final_project/core/constans/tasky_text.dart';
+import 'package:final_project/core/constants/tasky_color.dart';
+import 'package:final_project/core/constants/tasky_text.dart';
 import 'package:final_project/core/services/responsive.dart';
 import '../../core/services/navigation.dart';
 import '../../widgets/tasky_button_root.dart';

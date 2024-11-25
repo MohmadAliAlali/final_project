@@ -1,4 +1,4 @@
-import 'package:final_project/core/constans/const_data.dart';
+import 'package:final_project/core/constants/const_data.dart';
 import 'package:final_project/core/services/navigation.dart';
 import 'package:final_project/view/nav_bar_page.dart';
 import 'package:flutter/material.dart';
