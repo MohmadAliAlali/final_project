@@ -1,5 +1,3 @@
-import 'package:final_project/view/nav_bar_page.dart';
-import 'package:final_project/view/signup_screen/signup_screen.dart';
 import 'package:final_project/view/welcome_screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,13 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context);
-    return MaterialApp(
+    return const MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
         debugShowCheckedModeBanner: false,
-        home: const WelcomeScreen());
+        home:  WelcomeScreen());
   }
 }
