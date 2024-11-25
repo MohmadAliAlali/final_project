@@ -1,5 +1,7 @@
-import 'package:final_project/core/constans/tasky_color.dart';
-import 'package:final_project/core/constans/tasky_text_style.dart';
+import 'package:final_project/core/constants/tasky_color.dart';
+import 'package:final_project/core/constants/tasky_icons.dart';
+import 'package:final_project/core/constants/tasky_text_style.dart';
+import 'package:final_project/core/services/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -15,43 +17,44 @@ class TaskyAppCustomListViewTeamMembers extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
+      separatorBuilder: (context, index) {
+        return SizedBox(width: 10.0.w); // المسافة بين العناصر
+      },
       scrollDirection: Axis.horizontal,
       itemCount: teamMembers.length + 1,
       itemBuilder: (context, index) {
         if (index == teamMembers.length) {
           return Padding(
-            padding: const EdgeInsets.all(4.0),
+            padding: 4.p,
             child: Column(
               children: [
                 CircleAvatar(
-                  radius: 22,
-                  child: Icon(
-                    Icons.add,
-                    color: TaskyColor.orange,
-                  ),
+                  radius: 22.r,
+                  child: TaskyIcons.addOrange
                 ),
               ],
             ),
           );
         }
         return Padding(
-          padding: const EdgeInsets.all(4.0),
+          padding: 4.p,
           child: Column(
             children: [
               CircleAvatar(
-                radius: 20,
+                radius: 20.r,
                 backgroundColor: Colors.grey.shade200,
-                child: SvgPicture.asset(
+                child: Image.asset(
                   teamMembers[index],
                   fit: BoxFit.cover,
                   width: double.infinity,
                   //height: 30,
                 ),
               ),
+              SizedBox(height: 6.h,),
               Text(
                 names[index],
-                style: TaskyTextStyle.teamNameTextStyle,
+                style: TaskyTextStyle.text14gray0500,
               ),
             ],
           ),

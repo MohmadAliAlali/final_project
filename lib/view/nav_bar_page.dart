@@ -1,8 +1,10 @@
 import 'package:final_project/core/constants/tasky_color.dart';
 import 'package:final_project/core/constants/tasky_icons.dart';
 import 'package:final_project/core/constants/tasky_text.dart';
+import 'package:final_project/core/services/navigation.dart';
 import 'package:final_project/core/services/responsive.dart';
 import 'package:final_project/view/chat_screen/chat_screen.dart';
+import 'package:final_project/view/create_team_screen/create_team_screen.dart';
 import 'package:final_project/view/home_screen/home_screen.dart';
 import 'package:final_project/widgets/tasky_button_add.dart';
 import 'package:flutter/material.dart';
@@ -58,7 +60,6 @@ class _NavBarPageState extends State<NavBarPage> {
         children: List.generate(icons.length, (index) {
           final bool isCenter = index == 2;
           final bool isSelected = visit == index;
-
           return GestureDetector(
             onTap: () {
               if (isCenter) {
@@ -119,14 +120,16 @@ class _NavBarPageState extends State<NavBarPage> {
                   height: 4.h,
                   width: 42.w,
                   margin: EdgeInsets.only(bottom: 30.h),
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    color: Color(0xffDFDFDF),
+                  decoration:  BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10.r)),
+                    color: TaskyColor.gray5,
 
                   ),
                 ),
                 TaskyButtonAdd(
-                  onPressed: () {  },
+                  onPressed: () {
+
+                  },
                   text: TaskyText.addCreateTask,
                   icon: TaskyIcons.editSquareAddScreen,
                 ),
@@ -137,9 +140,11 @@ class _NavBarPageState extends State<NavBarPage> {
                   icon: TaskyIcons.plusAddScreen,
                 ),
                 SizedBox(height: 20.h,),
-
                 TaskyButtonAdd(
-                  onPressed: () {  },
+                  onPressed: () {
+                    Navigation.goBack(context);
+                    Navigation.navigateTo(context,const  CreateTeamScreen());
+                  },
                   text: TaskyText.addCreateTeam,
                   icon: TaskyIcons.groupUsers,
                 ),
@@ -150,25 +155,30 @@ class _NavBarPageState extends State<NavBarPage> {
                   text: TaskyText.addCreateEvent,
                   icon: TaskyIcons.timeCircleAddScreen,
                 ),
-                Container(
-                  width: 50.w,
-                  height: 50.h,
-                  padding: EdgeInsets.fromLTRB(11.w, 11.h, 11.w, 11.h),
-                  margin: EdgeInsets.only(top: 13.h),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: TaskyColor.orange,
-                    border: Border.all(color: TaskyColor.lightOrange3,width: 1.e),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
-                        blurRadius: 4,
-                        spreadRadius: 1,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
+                GestureDetector(
+                  onTap: (){
+                    Navigation.goBack(context);
+                  },
+                  child: Container(
+                    width: 50.w,
+                    height: 50.h,
+                    padding: EdgeInsets.fromLTRB(11.w, 11.h, 11.w, 11.h),
+                    margin: EdgeInsets.only(top: 13.h),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: TaskyColor.orange,
+                      border: Border.all(color: TaskyColor.lightOrange3,width: 1.e),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.3),
+                          blurRadius: 4,
+                          spreadRadius: 1,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    child: TaskyIcons.falseMarkAddScreen,
                   ),
-                  child: TaskyIcons.falseMarkAddScreen,
                 ),
               ],
             ),

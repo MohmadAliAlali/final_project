@@ -260,7 +260,7 @@ class TaskyTextStyle {
     height: 14.h/14.f,
     fontSize: 14.0.f,
     fontWeight: FontWeight.w500,
-    color: TaskyColor.gray0,
+    color: TaskyColor.grayText1,
   );
 
   static  TextStyle text14grayText0500 = TextStyle(

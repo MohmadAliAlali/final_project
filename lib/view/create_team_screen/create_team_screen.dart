@@ -1,14 +1,16 @@
-import 'package:final_project/core/constans/tasky_color.dart';
-import 'package:final_project/core/constans/tasky_text_style.dart';
-import 'package:final_project/widgets/tasky_app_custom_elevated_button.dart';
+import 'package:final_project/core/constants/tasky_color.dart';
+import 'package:final_project/core/constants/tasky_images.dart';
+import 'package:final_project/core/constants/tasky_text_style.dart';
+import 'package:final_project/core/services/navigation.dart';
+import 'package:final_project/core/services/responsive.dart';
 import 'package:final_project/widgets/tasky_app_custom_list_view_team_members.dart';
+import 'package:final_project/widgets/tasky_button_profile.dart';
 import 'package:final_project/widgets/tasky_header.dart';
 import 'package:final_project/widgets/tasky_svg.dart';
-import 'package:final_project/widgets/tasky_text_field.dart';
+import 'package:final_project/widgets/tasky_text_form_filed_with_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
-
+import 'package:final_project/core/constants/tasky_text.dart';
 class CreateTeamScreen extends StatefulWidget {
   const CreateTeamScreen({super.key});
 
@@ -19,13 +21,15 @@ class CreateTeamScreen extends StatefulWidget {
 class _CreateTeamScreenState extends State<CreateTeamScreen> {
   final TextEditingController teamNameController = TextEditingController();
   final List<String> teamMembers = [
-    'assets/images/jeeny.svg',
-    'assets/images/mehrin.svg',
-    'assets/images/Alex.svg',
-    'assets/images/jafar.svg',
+    TaskyImages.user3,
+    TaskyImages.user4,
+    TaskyImages.user4,
+    TaskyImages.user3,
   ];
-  final List<String> names = ["Jenny", "mehrin", "Avishek", "Jafar", ""];
+  String? selectedType;
 
+  final List<String> names = ["Jenny", "mehrin", "Avishek", "Jafar", ""];
+  final types = ["Type A", "Type B", "Type C"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,124 +41,131 @@ class _CreateTeamScreenState extends State<CreateTeamScreen> {
             children: [
               TaskcyHeader(
                 svgIconOne: TaskcySvg(
-                    svgWidth: 20,
-                    svgHeight: 20,
+                    svgWidth: 20.w,
+                    svgHeight: 20.h,
                     TaskcySvgLink: 'assets/icons/back_arrow_ios.svg'),
                 isbuttonTwoShow: false,
                 isButtonText: true,
                 isButtonContainer: false,
                 istextShow: true,
                 screenName: 'Create Team',
-                textLeftPadding: 91,
+                textLeftPadding: 62.w,
+                onPressed: (){
+                  Navigation.goBack(context);
+                },
               ),
-              Stack(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 50.0),
-                    child: SizedBox(
-                      width: double.infinity,
-                      height: MediaQuery.of(context).size.height / 2.9,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 80.0),
+              SizedBox(
+                width:375.w ,
+                height:208.h ,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      top: 0.h,
+                      right: 0,
+                      child: SizedBox(
+                        width: 198.w,
+                        height: 208.h,
                         child: SvgPicture.asset(
-                          'assets/images/circlesImage.svg',
-                          fit: BoxFit.cover,
+                            'assets/images/circlesImage.svg',
+                            fit: BoxFit.fill,
                         ),
                       ),
                     ),
-                  ),
-                  Positioned(
-                    left: 40,
-                    top: 80,
-                    child: Center(
-                      child: SvgPicture.asset(
-                        'assets/images/xacademyLogo.svg',
-                        height: 35,
-                        //fit: BoxFit.contain,
+                    Positioned(
+                      right: 73.w,
+                      top: 81.h,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          'assets/images/xacademyLogo.svg',
+                          height: 35.h,
+                          fit: BoxFit.fill,
+                          //fit: BoxFit.contain,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 20.0),
+                padding: EdgeInsets.only(left: 20.0.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Team Name",
-                      style: TaskyTextStyle.teamNameTextStyle,
-                    ),
-                    TaskyTextField(
+                    TaskyTextFormFiledWithText(
+                      text:  Text(
+                        "Team Name",
+                        style: TaskyTextStyle.text14darkBlue400,
+                      ),
                         controller: teamNameController, hintText: "Team Align"),
                   ],
                 ),
               ),
 
-              /* Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    hintText: "Team Align",
-                    hintStyle: TaskyTextStyle.inputTeamNameTextStyle,
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-              ),*/
-
               Padding(
-                padding: const EdgeInsets.only(left: 20.0),
-                child: Text(
-                  "Team Members",
-                  style: TaskyTextStyle.teamNameTextStyle,
-                ),
+                padding: EdgeInsets.only(left: 20.0.w),
+                child: TaskyText.createTeamTeamMember
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 12.0),
+                padding:  EdgeInsets.only(left: 12.0.w,top: 16.h,bottom: 30.h),
                 child: Container(
-                  height: 80,
-                  decoration: BoxDecoration(
+                  height: 80.h,
+                  decoration: const BoxDecoration(
                     shape: BoxShape.rectangle,
                   ),
-                  child: Expanded(
+                  child: SizedBox(
+                    width: 375.w,
+                    height: 90.h,
                     child: TaskyAppCustomListViewTeamMembers(
                         teamMembers: teamMembers, names: names),
                   ),
                 ),
               ),
+              Container(
+                  width: 327.w,
+                  height: 1.h,
+                  color: TaskyColor.gray5,
+                margin: EdgeInsets.fromLTRB(24.w, 0, 0, 30.h),
+                ),
               Padding(
-                padding: const EdgeInsets.only(left: 20.0),
+                padding:  EdgeInsets.only(left: 20.0.w,bottom: 16.w),
                 child: Text(
                   "Type",
-                  style: TaskyTextStyle.teamNameTextStyle,
+                  style: TaskyTextStyle.text14darkBlue400,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 20.0),
+                padding:  EdgeInsets.only(left: 20.0.w,bottom: 16.h),
                 child: SizedBox(
-                  height: 50,
-                  child: GridView(
-                    scrollDirection: Axis.horizontal,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 1,
-                      childAspectRatio: 0.4,
-                      mainAxisSpacing: 4,
-                      mainAxisExtent: 120,
-                    ),
-                    children: [
-                      buildTypeContainer(context, "Public"),
-                      buildTypeContainer(context, "Secret"),
-                      buildTypeContainer(context, "Private"),
-                    ],
-                  ),
+                  height: 50.h,
+                  child:
+                  ListView.separated(
+                    separatorBuilder: (context, index) {
+                      return SizedBox(width: 16.0.w); // المسافة بين العناصر
+                    },
+                  scrollDirection: Axis.horizontal,
+                    itemCount: types.length,
+                    itemBuilder: (context, index) {
+                      final type = types[index];
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectedType = type; // Update the selected type
+                          });
+                        },
+                        child: buildTypeContainer(context, type, type == selectedType),
+                      );
+                    },
+                  )
                 ),
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 60.0, vertical: 10),
+                     EdgeInsets.symmetric(horizontal: 60.0.w, vertical: 30.h),
                 child: SizedBox(
                   width: double.infinity,
-                  child: TaskyAppCustomElevatedButton(),
+                  child: TaskyButtonProfile(
+                    onPressed: () {  },
+                    child: TaskyText.createTeamCreateTeamButton ,),
                 ),
               ),
             ],
@@ -163,23 +174,28 @@ class _CreateTeamScreenState extends State<CreateTeamScreen> {
       ),
     );
   }
-
-  Widget buildTypeContainer(BuildContext context, String type) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 4.0),
-      child: Container(
+  Widget buildTypeContainer(BuildContext context, String type, bool isSelected) {
+    return  Container(
+        height: 40.h,
+        width: 101.w,
         decoration: BoxDecoration(
           shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(12.r),
           color: Colors.grey.shade200,
+          border: Border.all(
+            color: isSelected ? Colors.blue : Colors.transparent, // Highlight when selected
+            width: 2.r,
+          ),
         ),
         child: Center(
           child: Text(
             type,
-            style: TaskyTextStyle.teamNameTextStyle,
+            style: isSelected
+                ? TaskyTextStyle.text14darkBlue500.copyWith(
+                fontWeight: FontWeight.bold, color: Colors.blue)
+                : TaskyTextStyle.text14darkBlue500,
           ),
         ),
-      ),
     );
   }
 }
