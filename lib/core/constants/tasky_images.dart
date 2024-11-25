@@ -57,5 +57,7 @@ static String circle2 = 'assets/images/Circle2.png';
   static String profileUser4 = 'assets/images/tasky_images.dart';
   static String Group18060 = 'assets/images/Group 18060.png';
   static String userProfileEdit = 'assets/images/Profile Photo.png';
+  static String Circle3 = 'assets/images/Circle3.png';
+  static String createTeamUser10 = 'assets/images/user10.png';
 
 }

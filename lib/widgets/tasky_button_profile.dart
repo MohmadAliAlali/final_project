@@ -25,7 +25,6 @@ class TaskyButtonProfile extends StatelessWidget {
           height: height.h,
           width: width.w,
           alignment: Alignment.center,
-
           decoration: BoxDecoration(
               boxShadow: const [
                 BoxShadow(

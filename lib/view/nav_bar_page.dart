@@ -3,9 +3,11 @@ import 'package:final_project/core/constants/tasky_icons.dart';
 import 'package:final_project/core/constants/tasky_text.dart';
 import 'package:final_project/core/services/navigation.dart';
 import 'package:final_project/core/services/responsive.dart';
+import 'package:final_project/view/add_task_screen/add_task_screen.dart';
 import 'package:final_project/view/chat_screen/chat_screen.dart';
 import 'package:final_project/view/create_team_screen/create_team_screen.dart';
 import 'package:final_project/view/home_screen/home_screen.dart';
+import 'package:final_project/view/profile_screen/profile_screen.dart';
 import 'package:final_project/widgets/tasky_button_add.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -25,7 +27,7 @@ class _NavBarPageState extends State<NavBarPage> {
     const ChatScreen(),
     const Scaffold(body: Center(child: Text("Wishlist Page"))),
     const ChatScreen(),
-    const Scaffold(body: Center(child: Text("Profile Page"))),
+    const ProfileScreen(),
   ];
 
   @override
@@ -128,6 +130,8 @@ class _NavBarPageState extends State<NavBarPage> {
                 ),
                 TaskyButtonAdd(
                   onPressed: () {
+                    Navigation.goBack(context);
+                    Navigation.navigateTo(context,const  AddTaskScreen());
 
                   },
                   text: TaskyText.addCreateTask,

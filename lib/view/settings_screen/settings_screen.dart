@@ -1,6 +1,7 @@
 import 'package:final_project/core/constants/tasky_text.dart';
 import 'package:final_project/core/services/navigation.dart';
 import 'package:final_project/core/services/responsive.dart';
+import 'package:final_project/view/langauge_screen/langauge_screen.dart';
 import 'package:final_project/widgets/tasky_button_user_profile.dart';
 import 'package:final_project/widgets/tasky_button_with_swich.dart';
 import 'package:final_project/widgets/tasky_form_field.dart';
@@ -42,7 +43,8 @@ class _SettingPageState extends State<SettingPage> {
               isButtonContainer: false,
               istextShow: true,
               screenName: 'Settings',
-              textLeftPadding: 91.w,
+              textLeftPadding: 84.w,
+              textButtonOrContainerLeftPadding: 84.w,
             ),
             SizedBox(height: 40.h),
             TaskyButtonWithSwitch(
@@ -71,7 +73,9 @@ class _SettingPageState extends State<SettingPage> {
             ),
             SizedBox(height: 22.h),
             TaskyButtonUserProfile(
-              onPressed: () {},
+              onPressed: () {
+                Navigation.navigateTo(context,const  LangaugeScreen());
+              },
               text: TaskyText.settingsLanguage,
             ),
             SizedBox(height: 22.h),

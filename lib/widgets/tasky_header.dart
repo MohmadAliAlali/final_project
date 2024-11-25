@@ -37,15 +37,15 @@ class TaskcyHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         GestureDetector(
           onTap: onPressed,
           child: Container(
             margin: EdgeInsets.only(top: 16.p.top, left: 24.p.left),
-            width: 42.w,
-            height: 42.h,
+            width: 42.e,
+            height: 42.e,
             decoration: BoxDecoration(
               border: Border.all(
                 color: const Color(0xffDFDFDF),
@@ -71,10 +71,11 @@ class TaskcyHeader extends StatelessWidget {
                 onTap: onPressedRightIcon,
                 child: Container(
                   margin: EdgeInsets.only(
-                      top:16.h,
+                      top: 16.h,
+                      right: 24.p.right,
                       left: textButtonOrContainerLeftPadding ?? 0),
-                  width: 42.w,
-                  height: 42.h,
+                  width: 42.e,
+                  height: 42.e,
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 1.w,
@@ -95,11 +96,18 @@ class TaskcyHeader extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                           color: TaskyColor.orange),
                       topPadding: 20.p.top,
+                      rightPadding: 24.p.right,
                       leftPadding: textButtonOrContainerLeftPadding,
                       text: "save",
                     ),
                   )
                 : Container(
+                    width: 42.e,
+                    height: 42.e,
+                    margin: EdgeInsets.only(
+                        top: 16.h,
+                        right: 24.p.right,
+                        left: textButtonOrContainerLeftPadding ?? 0),
                     color: TaskyColor.white,
                   )
       ],

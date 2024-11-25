@@ -44,6 +44,9 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 onPressed: () {
                   Navigation.goBack(context);
                 },
+                onPressedRightIcon: (){
+                  Navigation.goBack(context);
+                },
                 svgIconOne: TaskcySvg(
                   svgWidth: 20.w,
                   svgHeight: 20.h,
@@ -67,7 +70,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       top: 40.h,
                       left: 122.w,
                       right: 121.w,
-                      child:  Container(
+                      child:  SizedBox(
                         height: 132.h,
                         width: 132.w,
                         child: Image.asset(TaskyImages.userProfileEdit),

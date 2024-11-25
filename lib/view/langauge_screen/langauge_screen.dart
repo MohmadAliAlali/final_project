@@ -42,7 +42,8 @@ class _LangaugeScreenState extends State<LangaugeScreen> {
             isButtonContainer: false,
             istextShow: true,
             screenName: 'Sign In',
-            textLeftPadding: 91.w,
+            textLeftPadding: 76.w,
+            textButtonOrContainerLeftPadding: 76.w,
           ),
           Expanded(child: Padding(
             padding: 24.p,

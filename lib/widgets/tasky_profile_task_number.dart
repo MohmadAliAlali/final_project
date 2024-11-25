@@ -1,8 +1,8 @@
-import 'package:final_project/core/constans/tasky_icons.dart';
+import 'package:final_project/core/constants/tasky_icons.dart';
 import 'package:final_project/core/services/responsive.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../core/constans/tasky_color.dart';
+import '../core/constants/tasky_color.dart';
 
 class TaskyProfileTaskNumber extends StatelessWidget {
 

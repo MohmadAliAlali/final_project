@@ -68,8 +68,7 @@ class _ChatScreenState extends State<ChatScreen> {
               textLeftPadding: 104.w,
               textButtonOrContainerLeftPadding: 104.w,
                 onPressed: (){
-                print('object');
-                Navigation.navigateTo(context,const EditProfileScreen());
+                Navigation.goBack(context);
                 },
             ),
             Padding(

@@ -1,19 +1,16 @@
-import 'package:final_project/core/constans/tasky_color.dart';
-import 'package:final_project/core/constans/tasky_text.dart';
+import 'package:final_project/core/constants/tasky_text.dart';
 import 'package:final_project/core/services/navigation.dart';
-import 'package:final_project/core/services/responsive.dart';
+import 'package:final_project/exports/exports.dart';
 import 'package:final_project/view/add_task_screen/add_task_team_member.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import '../../core/constans/tasky_images.dart';
+import 'package:final_project/widgets/tasky_button_profile.dart';
+import 'package:final_project/widgets/tasky_text_form_filed_with_text.dart';
+import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
+import '../../core/constants/tasky_images.dart';
 import '../../widgets/tasky_button_root.dart';
 import '../../widgets/tasky_header.dart';
 import '../../widgets/tasky_svg.dart';
 import '../../widgets/tasky_team_member.dart';
-import '../../widgets/tasky_text_field.dart';
 import '../../widgets/tasky_timepicker.dart';
-import 'package:intl/intl.dart';
-
 class AddTaskScreen extends StatefulWidget {
   const AddTaskScreen({super.key});
 
@@ -34,20 +31,25 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
     TeamMember(name: 'Jafor', imageUrl: TaskyImages.createTeamUser5),
   ];
 
-  String selectedDate = "";
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime? pickedDate = await showDatePicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(2000),
-      lastDate: DateTime(2100),
+  String _selectedDate = "No Date Chosen";
+
+  void _showDatePicker() async {
+    DateTime? pickedDate = await DatePicker.showDateTimePicker(
+      context,
+      showTitleActions: true,
+      minTime: DateTime(2020, 1, 1),
+      maxTime: DateTime(2025, 12, 31),
+      currentTime: DateTime.now(),
+      locale: LocaleType.en,
     );
+
     if (pickedDate != null) {
       setState(() {
-        selectedDate = DateFormat('MMMM dd, yyyy').format(pickedDate);
+        _selectedDate = pickedDate.toString();
       });
     }
   }
+
 
   TimeOfDay? firstTime;
   TimeOfDay? secondTime;
@@ -64,11 +66,12 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
     });
   }
   String selectedBoard = "";
-  final List<Text> boards = [
-    TaskyText.addTaskUrgent,
-    TaskyText.addTaskRunning,
-    TaskyText.addTaskOngoing,
+  final List<String> boards = [
+    'Urgent',
+    'Running',
+    'ongoing',
   ];
+  String? selectedType;
 
   @override
   Widget build(BuildContext context) {
@@ -92,59 +95,52 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
               isButtonContainer: true,
               istextShow: true,
               screenName: 'Add Task',
-              textLeftPadding: 104.w,
-              textButtonOrContainerLeftPadding: 104.w,
+              textLeftPadding: 80.w,
+              textButtonOrContainerLeftPadding: 80.w,
             ),
             Padding(
-                padding: EdgeInsets.only(top: 40.0.h, left: 10.w, right: 10.w),
+                padding: EdgeInsets.only(top: 40.0.h, left: 24.w, right: 10.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TaskyText.addTaskTaskName,
-                    SizedBox(
-                      height: 20.h,
-                    ),
-                    TaskyTextField(
-                      height: 80,
-                      controller: _taskNameController,
-                      hintText: 'Mobile Application design',
+                    TaskyTextFormFiledWithText(
+                        controller: _taskNameController,
+                        hintText: 'Mobile Application design',
+                        text: TaskyText.addTaskTaskName,
+                      pb: 20.h,
                     ),
                     TaskyText.addTaskTeamMember,
                     SizedBox(
                       height: 10.h,
                     ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          ...teamMembers
-                              .map((member) => TeamMemberCard(member: member))
-                              .toList(),
-                          AddMemberButton(onPressed: () {})
-                        ],
-                      ),
-                    ),
                     SizedBox(
-                      height: 20.h,
+                      height: 100.h,
+                      width: 375.w,
+                      child:ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: teamMembers.length + 1, // Add 1 for the AddMemberButton
+                        itemBuilder: (context, index) {
+                          if (index < teamMembers.length) {
+                            return TeamMemberCard(member: teamMembers[index]);
+                          } else {
+                            // Return the AddMemberButton at the end
+                            return AddMemberButton(onPressed: () {});
+                          }
+                        },
+                      )
                     ),
                     TaskyText.addTaskDate,
-                    SizedBox(height: 10),
+                   SizedBox(height: 16.h),
                     TaskyButtonRoot(
-                      onPressed: () => _selectDate(context),
+                      height: 64,
+                      onPressed: () => _showDatePicker(),
                       paddingLeft: 16.w,
-
                       child: Text(
-                        "$selectedDate",
-                        style: TextStyle(
-                          fontFamily: 'Poppins-Regular',
-                          height: 24.h / 13.f,
-                          fontSize: 18.0.f,
-                          fontWeight: FontWeight.w500,
-                          color: TaskyColor.black1,
-                        ),
+                        style: TaskyTextStyle.text18darkBlue600,
+                        '$_selectedDate'
                       ),
                     ),
-                    SizedBox(height: 20.h,),
+                    SizedBox(height: 30.h,),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -155,19 +151,16 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                               children: [
                                 TaskyText.addTaskStartTime,
                                 SizedBox(height: 20.h,),
-                                TaskyTimepicker(
-                                  )
-
+                                const TaskyTimepicker()
                               ],
-                            ),SizedBox(width: 30.w,),
+                            ),
+                            SizedBox(width: 30.w,),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 TaskyText.addTaskEndTime,
                                 SizedBox(height: 20.h,),
-                                TaskyTimepicker(
-                                  //onTimeSelected: updateFirstTime,
-                                )
+                                const TaskyTimepicker()
 
                               ],
                             ),
@@ -175,76 +168,70 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                         ),
                     SizedBox(height: 20.h,),
                     TaskyText.addTaskBoard,
-                  Padding(
-                    padding: EdgeInsets.only(top: 40.0.h, left: 10.w, right: 10.w),
-                    child: Column(
+                   Column(
                       children: [
-                        // Board Section
-                        SizedBox(height: 10.h),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 10.w),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: boards.map((board) {
-                              final isSelected = selectedBoard == board.data;
-                              return GestureDetector(
-                                onTap: () {
-                                  setState(() {
-                                    selectedBoard = board.data!;
-                                  });
+                        SizedBox(height: 16.h),
+                        SizedBox(
+                            width: 375.w,
+                              height: 50.h,
+                              child:
+                              ListView.separated(
+                                separatorBuilder: (context, index) {
+                                  return SizedBox(width: 16.0.w); // المسافة بين العناصر
                                 },
-                                child: Container(
-                                  margin: EdgeInsets.symmetric(horizontal: 5.w),
-                                  padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-                                  decoration: BoxDecoration(
-                                    color: TaskyColor.white,
-                                    border: Border.all(
-                                        color: isSelected ? TaskyColor.orange:TaskyColor.gray1 ),
-                                    borderRadius: BorderRadius.circular(8.r),
-                                  ),
-                                  child: board,
-                                ),
-                              );
-                            }).toList(),
+                                scrollDirection: Axis.horizontal,
+                                itemCount: boards.length,
+                                itemBuilder: (context, index) {
+                                  final type = boards[index];
+                                  return GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        selectedType = type; // Update the selected type
+                                      });
+                                    },
+                                    child: buildTypeContainer(context, type, type == selectedType),
+                                  );
+                                },
+                              )
                           ),
-                        ),
-                        SizedBox(height: 40.h),
-                        // Save Button
-                        Center(
-                          child: GestureDetector(
-                            onTap: () {
-                              // Add Save Logic
-                            },
-                            child: Container(
-                              width: 218.w,
-                              height: 48.h,
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                color: TaskyColor.orange,
-                                borderRadius: BorderRadius.circular(8.r),
-                              ),
-                              child: Text(
-                                "Save",
-                                style: TextStyle(
-                                  color: TaskyColor.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16.f,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
+                        SizedBox(height: 30.h),
+                        TaskyButtonProfile(
+                            onPressed: (){},
+                            child: TaskyText.addTaskSaveButton
+                        )
                       ],
                     ),
-                  ),
-
-
                     ],
-                )),
+                )
+            ),
 
           ],
         ),
       ),
     );
   }
+  Widget buildTypeContainer(BuildContext context, String type, bool isSelected) {
+    return  Container(
+      padding: EdgeInsets.symmetric(vertical: 13.h,horizontal: 26.w),
+      decoration: BoxDecoration(
+        shape: BoxShape.rectangle,
+        borderRadius: BorderRadius.circular(12.r),
+        color: Colors.grey.shade200,
+        border: Border.all(
+          color: isSelected ? Colors.blue : Colors.transparent, // Highlight when selected
+          width: 2.r,
+        ),
+      ),
+      child: Center(
+        child: Text(
+          type,
+          style: isSelected
+              ? TaskyTextStyle.text14darkBlue500.copyWith(
+              fontWeight: FontWeight.bold, color: Colors.blue)
+              : TaskyTextStyle.text14darkBlue500,
+        ),
+      ),
+    );
+  }
+
 }

@@ -1,9 +1,10 @@
 
+import 'package:final_project/core/constants/tasky_text_style.dart';
 import 'package:final_project/core/services/responsive.dart';
 import 'package:final_project/widgets/tasky_button_root.dart';
 import 'package:flutter/material.dart';
 
-import '../core/constans/tasky_color.dart';
+import '../core/constants/tasky_color.dart';
 
 class TaskyTimepicker extends StatefulWidget {
   final TimeOfDay? initialTime;
@@ -39,20 +40,14 @@ class _TaskyTimepickerState extends State<TaskyTimepicker> {
   @override
   Widget build(BuildContext context) {
     return TaskyButtonRoot(
-      width: 135.w,
-
-      paddingLeft: 10.w,
-      paddingRight: 10.w,
+      width: 148,
+      height: 64,
+      paddingLeft: 10,
+      paddingRight: 10,
       onPressed: () => _selectTime(context),
       child: Text(
         selectedTime == null ? "" : selectedTime!.format(context),
-        style: TextStyle(
-          fontFamily: 'Poppins-Regular',
-          height: 24.h / 13.f,
-          fontSize: 18.0.f,
-          fontWeight: FontWeight.w500,
-          color: TaskyColor.black1,
-        ),
+        style: TaskyTextStyle.text18darkBlue600
       ),
     );
   }
