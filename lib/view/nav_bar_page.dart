@@ -1,12 +1,16 @@
 import 'package:final_project/core/constans/tasky_color.dart';
 import 'package:final_project/core/constans/tasky_icons.dart';
 import 'package:final_project/core/constans/tasky_text.dart';
+import 'package:final_project/core/services/navigation.dart';
 import 'package:final_project/core/services/responsive.dart';
 import 'package:final_project/view/chat_screen/chat_screen.dart';
 import 'package:final_project/view/home_screen/home_screen.dart';
+import 'package:final_project/view/profile_screen/profile_screen.dart';
 import 'package:final_project/widgets/tasky_button_add.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'add_task_screen/add_task_screen.dart';
 
 class NavBarPage extends StatefulWidget {
   const NavBarPage({super.key});
@@ -23,7 +27,7 @@ class _NavBarPageState extends State<NavBarPage> {
     const ChatScreen(),
     const Scaffold(body: Center(child: Text("Wishlist Page"))),
     const ChatScreen(),
-    const Scaffold(body: Center(child: Text("Profile Page"))),
+    const ProfileScreen(),
   ];
 
   @override
@@ -126,7 +130,9 @@ class _NavBarPageState extends State<NavBarPage> {
                   ),
                 ),
                 TaskyButtonAdd(
-                  onPressed: () {  },
+                  onPressed: () {
+                    Navigation.navigateTo(context, AddTaskScreen());
+                  },
                   text: TaskyText.addCreateTask,
                   icon: TaskyIcons.editSquareAddScreen,
                 ),

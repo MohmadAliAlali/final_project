@@ -31,6 +31,7 @@ class TaskyImages {
   static String createTeamUser5 = 'assets/images/user5.png';
   static String createTeamUser6 = 'assets/images/user6.png';
   static String createTeamUser8 = 'assets/images/user8.png';
+  static String createTeamUser10 = 'assets/images/user10.png';
 
   //chat
 
@@ -44,6 +45,9 @@ class TaskyImages {
   static String searchUser5 = 'assets/images/user5.png';
   static String searchUser4 = 'assets/images/user4.png';
   //profile
-  static String profileUser4 = 'assets/images/tasky_images.dart';
+  static String profileUser4 = 'assets/images/Group 18060.png';
+  static String Circle3 = 'assets/images/Circle3.png';
+
+
 
 }
