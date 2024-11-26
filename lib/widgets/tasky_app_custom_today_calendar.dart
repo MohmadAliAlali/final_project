@@ -44,7 +44,7 @@ class _TodayTaskyCalendarState extends State<TodayTaskyCalendar> {
           Row(
             children: [
               Text(
-                '${widget.selectedDate.day} ${_getMonthName(widget.selectedDate)} ${widget.selectedDate.year}',
+                '${_getMonthName(widget.selectedDate)},${widget.selectedDate.day} ',
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -52,7 +52,7 @@ class _TodayTaskyCalendarState extends State<TodayTaskyCalendar> {
               ),
               Spacer(),
               Padding(
-                padding: const EdgeInsets.only(right: 10.0),
+                padding: const EdgeInsets.only(right: 15.0),
                 child: GestureDetector(
                   onTap: () {
                     setState(() {
@@ -64,7 +64,7 @@ class _TodayTaskyCalendarState extends State<TodayTaskyCalendar> {
                     decoration: BoxDecoration(
                       color: isIconPressed ? Colors.orange : Colors.white,
                       shape: BoxShape.circle,
-                      border: Border.all(color: Colors.grey, width: 2),
+                      border: Border.all(color: Colors.white, width: 2),
                     ),
                     child: SvgPicture.asset(
                       'assets/icons/calendar.svg',
@@ -91,4 +91,4 @@ class _TodayTaskyCalendarState extends State<TodayTaskyCalendar> {
       ),
     );
   }
-}
+}//${widget.selectedDate.year}

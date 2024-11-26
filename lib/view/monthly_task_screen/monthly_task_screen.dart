@@ -49,23 +49,6 @@ class _MonthlyTaskScreenState extends State<MonthlyTaskScreen> {
     ][date.month - 1]} ${date.year}";
   }
 
-  String _getMonthName(DateTime date) {
-    return [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December'
-    ][date.month - 1];
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -135,14 +118,14 @@ class _MonthlyTaskScreenState extends State<MonthlyTaskScreen> {
                 padding: const EdgeInsets.all(8.0),
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey, width: 2),
-                  borderRadius: BorderRadius.circular(8.0),
+                  borderRadius: BorderRadius.circular(15.0),
                 ),
                 child: TableCalendar(
                   focusedDay: selectedDate,
                   firstDay: DateTime.utc(2000),
                   lastDay: DateTime.utc(2100),
                   locale: "en_US",
-                  rowHeight: 43,
+                  rowHeight: 44,
                   calendarFormat: CalendarFormat.month,
                   startingDayOfWeek: StartingDayOfWeek.monday,
                   selectedDayPredicate: (day) => isSameDay(selectedDate, day),
@@ -152,21 +135,24 @@ class _MonthlyTaskScreenState extends State<MonthlyTaskScreen> {
                     titleCentered: true,
                     formatButtonVisible: false,
                     leftChevronIcon: Icon(Icons.arrow_back_sharp,
-                        size: 25, color: TaskyColor.darkBlue),
+                        size: 22, color: TaskyColor.darkBlue),
                     rightChevronIcon: Icon(Icons.arrow_forward_sharp,
-                        size: 25, color: Colors.blue),
+                        size: 22, color: TaskyColor.darkBlue),
                     titleTextFormatter: (date, locale) => _formatDate(
                         date), // Use your custom formatting function
                     titleTextStyle: const TextStyle(
-                        fontSize: 16, fontWeight: FontWeight.bold),
+                        color: TaskyColor.orange,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold),
                   ),
                   calendarStyle: CalendarStyle(
+                    selectedTextStyle: TextStyle(color: Colors.black),
                     todayDecoration: BoxDecoration(
-                      color: Colors.orange,
                       shape: BoxShape.circle,
                     ),
                     selectedDecoration: BoxDecoration(
-                      color: Colors.blue,
+                      color: Colors.transparent,
+                      border: Border.all(color: Colors.orange, width: 1),
                       shape: BoxShape.circle,
                     ),
                   ),
